@@ -25,7 +25,7 @@
 #define UBGRAPHICSITEMSACTIONS_H
 
 #include <QObject>
-#include <phonon>
+#include <phonon/Phonon>
 
 
 enum eUBGraphicsItemMovePageAction {
