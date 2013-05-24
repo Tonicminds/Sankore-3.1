@@ -137,27 +137,7 @@ private:
     Permissions mOwnPermissions;
     QString mSortKey;
 };
-//Q_DECLARE_METATYPE( UBFeature )
-    QT_BEGIN_NAMESPACE
-    template <>
-    struct QMetaTypeId< UBFeature >
-    {
-        enum { Defined = 1 };
-        static int qt_metatype_id()
-            {
-                static QBasicAtomicInt metatype_id = Q_BASIC_ATOMIC_INITIALIZER(0);
-				/*
-				 * metatype_id may contain a 1 instead. Can't say why, really.
-				 * So we'll check for 1 too (it's an invalid custom type anyway)
-				 * -- Enrico Gueli <enrico.gueli@polito.it>
-				 */
-                if (metatype_id == 0 || metatype_id == 1)
-                    metatype_id = qRegisterMetaType< UBFeature >("UBFeature",
-                               reinterpret_cast< UBFeature *>(quintptr(-1)));
-                return metatype_id;
-            }
-    };
-    QT_END_NAMESPACE
+Q_DECLARE_METATYPE( UBFeature )
 Q_DECLARE_OPERATORS_FOR_FLAGS(UBFeature::Permissions)
 
 //Describe files in virtual file system
