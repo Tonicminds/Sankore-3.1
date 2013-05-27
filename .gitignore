@@ -75,3 +75,5 @@ plugins/cffadaptor/objects
 ##########
 .directory
 .DS_Store
+debug
+resources/etc/Uniboard.config
