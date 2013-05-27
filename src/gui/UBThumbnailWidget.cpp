@@ -850,6 +850,7 @@ UBSceneThumbnailNavigPixmap::~UBSceneThumbnailNavigPixmap()
 void UBSceneThumbnailNavigPixmap::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     event->accept();
+	qDebug() << "hover enter";
     updateButtonsState();
     update();
 }
@@ -857,6 +858,7 @@ void UBSceneThumbnailNavigPixmap::hoverEnterEvent(QGraphicsSceneHoverEvent *even
 void UBSceneThumbnailNavigPixmap::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     event->accept();
+	qDebug() << "hover leave";
     bButtonsVisible = false;
     update();
 }
