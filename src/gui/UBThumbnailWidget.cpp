@@ -968,7 +968,13 @@ void UBSceneThumbnailNavigPixmap::moveDownPage()
 
 void UBSceneThumbnailNavigPixmap::stickPageOnPreviousViews()
 {
-    UBApplication::applicationController->setUserSceneIndex(sceneIndex());
+    if (UBApplication::applicationController->userSceneIndex() != sceneIndex()) {
+        UBApplication::applicationController->setUserSceneIndex(sceneIndex());
+    }
+    else {
+        UBApplication::applicationController->setUserSceneIndex(-1);
+    }
+
     UBApplication::boardController->setActiveDocumentScene(UBApplication::boardController->activeSceneIndex());
 }
 
