@@ -835,6 +835,7 @@ UBSceneThumbnailNavigPixmap::UBSceneThumbnailNavigPixmap(const QPixmap& pix, UBD
     , bCanMoveUp(false)
     , bCanMoveDown(false)
     , bCanDuplicate(false)
+    , bCanStickOnPreviousViews(false)
 {
     if(0 <= UBDocumentContainer::pageFromSceneIndex(pSceneIndex)){
         setAcceptsHoverEvents(true);
@@ -887,6 +888,10 @@ void UBSceneThumbnailNavigPixmap::paint(QPainter *painter, const QStyleOptionGra
             painter->drawPixmap(3*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/menu.svg"));
         else
             painter->drawPixmap(3*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/menuDisabled.svg"));
+        if(bCanStickOnPreviousViews)
+            painter->drawPixmap(4*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/menu.svg"));
+        else
+            painter->drawPixmap(4*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/menuDisabled.svg"));
     }
 }
 
@@ -903,6 +908,8 @@ void UBSceneThumbnailNavigPixmap::mousePressEvent(QGraphicsSceneMouseEvent *even
         moveUpPage();
     if(bCanMoveDown && p.x() >= 3*(BUTTONSIZE + BUTTONSPACING) && p.x() <= 4*BUTTONSIZE + 3*BUTTONSPACING && p.y() >= 0 && p.y() <= BUTTONSIZE)
         moveDownPage();
+    if(bCanStickOnPreviousViews && p.x() >= 4*(BUTTONSIZE + BUTTONSPACING) && p.x() <= 5*BUTTONSIZE + 4*BUTTONSPACING && p.y() >= 0 && p.y() <= BUTTONSIZE)
+        stickPageOnPreviousViews();
 
     event->accept();
 }
@@ -914,6 +921,7 @@ void UBSceneThumbnailNavigPixmap::updateButtonsState()
     bCanMoveUp = false;
     bCanMoveDown = false;
     bCanDuplicate = false;
+    bCanStickOnPreviousViews = false;
 
     if(proxy()){
     	int pageIndex = UBDocumentContainer::pageFromSceneIndex(sceneIndex());
@@ -925,6 +933,7 @@ void UBSceneThumbnailNavigPixmap::updateButtonsState()
         bCanMoveUp = documentController->pageCanBeMovedUp(pageIndex);
         bCanMoveDown = documentController->pageCanBeMovedDown(pageIndex);
         bCanDuplicate = documentController->pageCanBeDuplicated(pageIndex);
+        bCanStickOnPreviousViews = documentController->pageCanBeStuckOnPreviousViews(pageIndex);
     }
 
     if(bCanDelete || bCanMoveUp || bCanMoveDown || bCanDuplicate)
@@ -940,9 +949,7 @@ void UBSceneThumbnailNavigPixmap::deletePage()
 
 void UBSceneThumbnailNavigPixmap::duplicatePage()
 {
-	//UBApplication::boardController->duplicateScene(sceneIndex());
-    UBApplication::applicationController->setUserSceneIndex(sceneIndex());
-    UBApplication::boardController->setActiveDocumentScene(UBApplication::boardController->activeSceneIndex());
+    UBApplication::boardController->duplicateScene(sceneIndex());
 }
 
 void UBSceneThumbnailNavigPixmap::moveUpPage()
@@ -955,6 +962,12 @@ void UBSceneThumbnailNavigPixmap::moveDownPage()
 {
     if (sceneIndex() < UBApplication::boardController->selectedDocument()->pageCount()-1)
         UBApplication::boardController->moveSceneToIndex(sceneIndex(), sceneIndex() + 1);
+}
+
+void UBSceneThumbnailNavigPixmap::stickPageOnPreviousViews()
+{
+    UBApplication::applicationController->setUserSceneIndex(sceneIndex());
+    UBApplication::boardController->setActiveDocumentScene(UBApplication::boardController->activeSceneIndex());
 }
 
 void UBImgTextThumbnailElement::Place(int row, int col, qreal width, qreal height)
