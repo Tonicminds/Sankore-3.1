@@ -874,7 +874,18 @@ void UBGraphicsToolBarItem::paint(QPainter *painter, const QStyleOptionGraphicsI
     QPainterPath path;
     path.addRoundedRect(rect(), 10, 10);
 
+/*
+ Setting the brush causes an infinite event loop that hangs the app.
+ I can't say exactly why. I thought it was because of a 1-pixel overlap
+ with selection border, but also the four buttons overlap and they don't
+ cause issues.
+ Strangely, disabling multi-monitor does not make this loop.
+ -- Enrico Gueli <enrico.gueli@polito.it>
+ */
+
+#if 0
     setBrush(QBrush(UBSettings::paletteColor));
+#endif
 
     painter->fillPath(path, brush());
 }
