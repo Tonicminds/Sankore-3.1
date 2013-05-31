@@ -141,15 +141,15 @@ void UBBoardPaletteManager::setupDockPaletteWidgets()
     mLeftPalette = new UBLeftPalette(mContainer);
 
     // LEFT palette widgets
-    mpPageNavigWidget = new UBPageNavigationWidget();
-    mLeftPalette->registerWidget(mpPageNavigWidget);
-    mLeftPalette->addTab(mpPageNavigWidget);
-
     if(UBSettings::settings()->teacherGuidePageZeroActivated->get().toBool() || UBSettings::settings()->teacherGuideLessonPagesActivated->get().toBool()){
         mpTeacherGuideWidget = new UBDockTeacherGuideWidget();
         mLeftPalette->registerWidget(mpTeacherGuideWidget);
         mLeftPalette->addTab(mpTeacherGuideWidget);
     }
+
+    mpPageNavigWidget = new UBPageNavigationWidget();
+    mLeftPalette->registerWidget(mpPageNavigWidget);
+    mLeftPalette->addTab(mpPageNavigWidget);
 
     mLeftPalette->connectSignals();
 
