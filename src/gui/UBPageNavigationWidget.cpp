@@ -154,7 +154,7 @@ void UBPageNavigationWidget::updateTime()
  */
 void UBPageNavigationWidget::setPageNumber(int current, int total)
 {
-    mPageNbr->setText(QString("%1 / %2").arg(current).arg(UBDocumentContainer::sceneIndexFromPage(total)));
+    mPageNbr->setText(QString("%1 / %2").arg(current).arg(total));
 }
 
 /**
