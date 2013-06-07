@@ -890,10 +890,13 @@ void UBSceneThumbnailNavigPixmap::paint(QPainter *painter, const QStyleOptionGra
             painter->drawPixmap(3*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/menuDisabled.svg"));
     }
     if (bButtonsVisible || sceneIndex() == UBApplication::applicationController->userSceneIndex()) {
-        if(bCanStickOnPreviousViews)
-            painter->drawPixmap(4*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/toolbar/display.png"));
-        else
-            painter->drawPixmap(4*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/toolbar/displayDisabled.png"));
+        if(bCanStickOnPreviousViews) {
+            QPointF br = this->boundingRect().bottomRight();
+            painter->drawPixmap(br.x - BUTTONSIZE, br.y, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/toolbar/b_monitor.png"));
+        } else {
+            // TODO "B monitor" disabled
+            //painter->drawPixmap(4*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/toolbar/displayDisabled.png"));
+        }
     }
 }
 
