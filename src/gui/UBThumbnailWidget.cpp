@@ -920,7 +920,7 @@ void UBSceneThumbnailNavigPixmap::mousePressEvent(QGraphicsSceneMouseEvent *even
 
     QPointF br = this->boundingRect().bottomRight();
 
-    if(bCanStickOnPreviousViews && p.x() >= br.x() - BUTTONSIZE && p.x() <= br.x() && p.y() >= br.y() && p.y() <= br.y() + BUTTONSIZE)
+    if(bCanStickOnPreviousViews && p.x() >= br.x() - BUTTONSIZE && p.x() <= br.x() && p.y() >= br.y() - BUTTONSIZE && p.y() <= br.y())
         stickPageOnPreviousViews();
 
     event->accept();
