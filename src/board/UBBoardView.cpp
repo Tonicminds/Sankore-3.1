@@ -373,7 +373,11 @@ void UBBoardView::tabletEvent (QTabletEvent * event)
     }
 
     // if event are not Pen events, we drop the tablet stuff and route everything through mouse event
-    if (currentTool != UBStylusTool::Pen && currentTool != UBStylusTool::Line && currentTool != UBStylusTool::Marker && !mMarkerPressureSensitive){
+    if (   currentTool != UBStylusTool::Pen 
+        && currentTool != UBStylusTool::Line 
+        && currentTool != UBStylusTool::Marker 
+        && currentTool != UBStylusTool::Eraser
+        && !mMarkerPressureSensitive){
         event->setAccepted (false);
         return;
     }

@@ -389,9 +389,11 @@ void UBApplicationController::showBoard()
 
     emit mainModeChanged(Board);
 
+#if 0
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
     if (UBStylusTool::Selector != currentTool)
         UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
+#endif
 
     UBApplication::boardController->freezeW3CWidgets(false);
     UBApplication::boardController->activeScene()->updateGroupButtonState();
