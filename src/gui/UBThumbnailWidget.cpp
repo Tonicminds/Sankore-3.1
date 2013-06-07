@@ -892,11 +892,15 @@ void UBSceneThumbnailNavigPixmap::paint(QPainter *painter, const QStyleOptionGra
     if (bButtonsVisible || sceneIndex() == UBApplication::applicationController->userSceneIndex()) {
         if(bCanStickOnPreviousViews) {
             QPointF br = this->boundingRect().bottomRight();
-            painter->drawPixmap(br.x - BUTTONSIZE, br.y, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/toolbar/b_monitor.png"));
+            painter->drawPixmap(br.x() - BUTTONSIZE, br.y(), BUTTONSIZE, BUTTONSIZE, QPixmap(":images/toolbar/b_monitor.png"));
         } else {
             // TODO "B monitor" disabled
             //painter->drawPixmap(4*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/toolbar/displayDisabled.png"));
         }
+    }
+    if (sceneIndex() == UBApplication::boardController->activeSceneIndex()) {
+        QPointF br = this->boundingRect().bottomRight();
+        painter->drawPixmap(br.x() - BUTTONSIZE - BUTTONSPACING, br.y(), BUTTONSIZE, BUTTONSIZE, QPixmap(":images/toolbar/a_monitor.png"));
     }
 }
 
@@ -913,7 +917,10 @@ void UBSceneThumbnailNavigPixmap::mousePressEvent(QGraphicsSceneMouseEvent *even
         moveUpPage();
     if(bCanMoveDown && p.x() >= 3*(BUTTONSIZE + BUTTONSPACING) && p.x() <= 4*BUTTONSIZE + 3*BUTTONSPACING && p.y() >= 0 && p.y() <= BUTTONSIZE)
         moveDownPage();
-    if(bCanStickOnPreviousViews && p.x() >= 4*(BUTTONSIZE + BUTTONSPACING) && p.x() <= 5*BUTTONSIZE + 4*BUTTONSPACING && p.y() >= 0 && p.y() <= BUTTONSIZE)
+
+    QPointF br = this->boundingRect().bottomRight();
+
+    if(bCanStickOnPreviousViews && p.x() >= br.x() - BUTTONSIZE && p.x() <= br.x() && p.y() >= br.y() && p.y() <= br.y() + BUTTONSIZE)
         stickPageOnPreviousViews();
 
     event->accept();
