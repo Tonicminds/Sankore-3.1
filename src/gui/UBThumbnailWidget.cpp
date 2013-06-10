@@ -895,7 +895,8 @@ void UBSceneThumbnailNavigPixmap::paint(QPainter *painter, const QStyleOptionGra
 
     if (bButtonsVisible || sceneIndex() == (userScene != -1 ? userScene : activeScene - 1)) {
         QPointF br = this->boundingRect().bottomRight();
-        painter->drawPixmap(br.x() - BUTTONSIZE, br.y() - BUTTONSIZE, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/monitorB.svg"));
+        painter->drawPixmap(br.x() - BUTTONSIZE, br.y() - BUTTONSIZE, BUTTONSIZE, BUTTONSIZE, 
+            QPixmap(userScene == -1 ? ":images/monitorB.svg" : ":images/monitorBStuck.svg"));
     }
     if (bButtonsVisible || sceneIndex() == activeScene) {
         QPointF br = this->boundingRect().bottomRight();
