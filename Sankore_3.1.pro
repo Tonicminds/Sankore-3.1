@@ -115,7 +115,7 @@ win32 {
    CONFIG += qaxcontainer
    exists(console):CONFIG += console
    QMAKE_CXXFLAGS += /MP /openmp
-   QMAKE_CXXFLAGS_RELEASE += /Od /Zi
+   QMAKE_CXXFLAGS_RELEASE += /Zi
    QMAKE_LFLAGS_RELEASE += /DEBUG
    UB_LIBRARY.path = $$DESTDIR
    UB_I18N.path = $$DESTDIR/i18n
