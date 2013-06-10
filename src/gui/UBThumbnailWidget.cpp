@@ -893,11 +893,6 @@ void UBSceneThumbnailNavigPixmap::paint(QPainter *painter, const QStyleOptionGra
     int activeScene = UBApplication::boardController->activeSceneIndex();
     int userScene = UBApplication::applicationController->userSceneIndex();
 
-    qDebug() 
-        << "my =" << sceneIndex() 
-        << "boardActive =" << activeScene
-        << "appUser =" << userScene
-        ;
     if (bButtonsVisible || sceneIndex() == (userScene != -1 ? userScene : activeScene - 1)) {
         QPointF br = this->boundingRect().bottomRight();
         painter->drawPixmap(br.x() - BUTTONSIZE, br.y() - BUTTONSIZE, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/monitorB.svg"));
