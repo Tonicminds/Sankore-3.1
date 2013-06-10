@@ -359,14 +359,7 @@ void UBBoardView::tabletEvent (QTabletEvent * event)
     QPointF tabletPos = event->pos();
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)dc->stylusTool ();
 
-    qDebug() << "tabletEvent type =" << event->type() 
-             << "pointerType =" << event->pointerType()
-             << "currentTool =" << currentTool
-             << "mUsingTabletEraser =" << mUsingTabletEraser 
-             << "pressure =" << event->pressure();
-
-    if (   event->type () == QEvent::TabletPress
-        || event->type () == QEvent::TabletEnterProximity) {
+    if (event->type () == QEvent::TabletPress || event->type () == QEvent::TabletEnterProximity) {
         if (event->pointerType () == QTabletEvent::Eraser) {
             dc->setStylusTool (UBStylusTool::Eraser);
             mUsingTabletEraser = true;
