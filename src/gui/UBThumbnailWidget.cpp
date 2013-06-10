@@ -889,16 +889,20 @@ void UBSceneThumbnailNavigPixmap::paint(QPainter *painter, const QStyleOptionGra
         else
             painter->drawPixmap(3*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/menuDisabled.svg"));
     }
-    if (bButtonsVisible || sceneIndex() == UBApplication::applicationController->userSceneIndex()) {
-        if(bCanStickOnPreviousViews) {
-            QPointF br = this->boundingRect().bottomRight();
-            painter->drawPixmap(br.x() - BUTTONSIZE, br.y() - BUTTONSIZE, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/monitorB.svg"));
-        } else {
-            // TODO "B monitor" disabled
-            //painter->drawPixmap(4*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/toolbar/displayDisabled.png"));
-        }
+
+    int activeScene = UBApplication::boardController->activeSceneIndex();
+    int userScene = UBApplication::applicationController->userSceneIndex();
+
+    qDebug() 
+        << "my =" << sceneIndex() 
+        << "boardActive =" << activeScene
+        << "appUser =" << userScene
+        ;
+    if (bButtonsVisible || sceneIndex() == (userScene != -1 ? userScene : activeScene - 1)) {
+        QPointF br = this->boundingRect().bottomRight();
+        painter->drawPixmap(br.x() - BUTTONSIZE, br.y() - BUTTONSIZE, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/monitorB.svg"));
     }
-    if (sceneIndex() == UBApplication::boardController->activeSceneIndex()) {
+    if (bButtonsVisible || sceneIndex() == activeScene) {
         QPointF br = this->boundingRect().bottomRight();
         painter->drawPixmap(br.x() - 2*(BUTTONSIZE + BUTTONSPACING), br.y() - BUTTONSIZE, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/monitorA.svg"));
     }
