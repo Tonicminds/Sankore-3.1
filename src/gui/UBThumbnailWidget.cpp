@@ -985,7 +985,7 @@ void UBSceneThumbnailNavigPixmap::stickPageOnPreviousViews()
         UBApplication::applicationController->setUserSceneIndex(-1);
     }
 
-    UBApplication::boardController->setActiveDocumentScene(UBApplication::boardController->activeSceneIndex());
+    UBApplication::boardController->regenerateThumbnails();
 }
 
 void UBImgTextThumbnailElement::Place(int row, int col, qreal width, qreal height)
