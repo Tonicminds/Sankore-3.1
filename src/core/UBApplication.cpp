@@ -631,7 +631,7 @@ bool UBApplication::eventFilter(QObject *obj, QEvent *event)
     {
         if (boardController && boardController->controlView()) {
             boardController->controlView()->forcedTabletRelease();
-            boardController->persistCurrentScene();
+            boardController->persistCurrentScene(true);
         }
     }
 
