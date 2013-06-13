@@ -904,6 +904,11 @@ void UBSceneThumbnailNavigPixmap::paint(QPainter *painter, const QStyleOptionGra
     }
 }
 
+bool UBSceneThumbnailNavigPixmap::shouldSetActiveSceneForClickAt(QPointF & pos) {
+    return !isPointerOverStickButton(pos);
+}
+
+
 void UBSceneThumbnailNavigPixmap::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     QPointF p = event->pos();
@@ -918,12 +923,19 @@ void UBSceneThumbnailNavigPixmap::mousePressEvent(QGraphicsSceneMouseEvent *even
     if(bCanMoveDown && p.x() >= 3*(BUTTONSIZE + BUTTONSPACING) && p.x() <= 4*BUTTONSIZE + 3*BUTTONSPACING && p.y() >= 0 && p.y() <= BUTTONSIZE)
         moveDownPage();
 
-    QPointF br = this->boundingRect().bottomRight();
-
-    if(bCanStickOnPreviousViews && p.x() >= br.x() - BUTTONSIZE && p.x() <= br.x() && p.y() >= br.y() - BUTTONSIZE && p.y() <= br.y())
+    if(bCanStickOnPreviousViews && isPointerOverStickButton(p))
         stickPageOnPreviousViews();
 
     event->accept();
+}
+
+bool UBSceneThumbnailNavigPixmap::isPointerOverStickButton(QPointF & p) {
+    QPointF br = this->boundingRect().bottomRight();
+
+    return p.x() >= br.x() - BUTTONSIZE 
+        && p.x() <= br.x() 
+        && p.y() >= br.y() - BUTTONSIZE 
+        && p.y() <= br.y();
 }
 
 void UBSceneThumbnailNavigPixmap::updateButtonsState()
