@@ -799,11 +799,11 @@ void UBPersistenceManager::reassignDocProxy(UBDocumentProxy *newDocument, UBDocu
     return mSceneCache.reassignDocProxy(newDocument, oldDocument);
 }
 
-void UBPersistenceManager::persistDocumentScene(UBDocumentProxy* pDocumentProxy, UBGraphicsScene* pScene, const int pSceneIndex, const bool noSvg)
+void UBPersistenceManager::persistDocumentScene(UBDocumentProxy* pDocumentProxy, UBGraphicsScene* pScene, const int pSceneIndex, const bool lightPersist)
 {
     checkIfDocumentRepositoryExists();
 
-    if (!noSvg) 
+    if (!lightPersist) 
         pScene->deselectAllItems();
 
     generatePathIfNeeded(pDocumentProxy);
@@ -821,7 +821,7 @@ void UBPersistenceManager::persistDocumentScene(UBDocumentProxy* pDocumentProxy,
 
     if (pScene->isModified() || teacherGuideModified)
     {
-        if (!noSvg) {
+        if (!lightPersist) {
             QElapsedTimer svgTimer;
             svgTimer.start();
             UBSvgSubsetAdaptor::persistScene(pDocumentProxy, pScene, pSceneIndex);

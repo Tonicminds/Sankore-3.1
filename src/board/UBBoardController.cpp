@@ -1968,14 +1968,14 @@ void UBBoardController::show()
     UBApplication::mainWindow->actionLibrary->setChecked(false);
 }
 
-void UBBoardController::persistCurrentScene(UBDocumentProxy *pProxy, const bool noSvg)
+void UBBoardController::persistCurrentScene(UBDocumentProxy *pProxy, const bool lightPersist)
 {
     if(UBPersistenceManager::persistenceManager()
             && selectedDocument() && mActiveScene && mActiveSceneIndex != mDeletingSceneIndex
             && (mActiveSceneIndex >= 0) && mActiveSceneIndex != mMovingSceneIndex
             && (mActiveScene->isModified() || (UBApplication::boardController->paletteManager()->teacherGuideDockWidget() && UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->isModified())))
     {        
-        UBPersistenceManager::persistenceManager()->persistDocumentScene(pProxy ? pProxy : selectedDocument(), mActiveScene, mActiveSceneIndex, noSvg);
+        UBPersistenceManager::persistenceManager()->persistDocumentScene(pProxy ? pProxy : selectedDocument(), mActiveScene, mActiveSceneIndex, lightPersist);
         updatePage(mActiveSceneIndex);
     }
 }
