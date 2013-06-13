@@ -268,6 +268,8 @@ class UBSceneThumbnailNavigPixmap : public UBSceneThumbnailPixmap
         UBSceneThumbnailNavigPixmap(const QPixmap& pix, UBDocumentProxy* proxy, int pSceneIndex);
         ~UBSceneThumbnailNavigPixmap();
 
+        bool shouldSetActiveSceneForClickAt(QPointF & pos);
+
     protected:
         void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
         void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
@@ -281,6 +283,8 @@ class UBSceneThumbnailNavigPixmap : public UBSceneThumbnailPixmap
         void moveUpPage();
         void moveDownPage();
         void stickPageOnPreviousViews();
+
+        bool isPointerOverStickButton(QPointF & pos);
 
         bool bButtonsVisible;
         bool bCanDelete;

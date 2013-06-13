@@ -287,7 +287,12 @@ void UBDocumentNavigator::mousePressEvent(QMouseEvent *event)
                 break;
             }
         }
-        UBApplication::boardController->setActiveDocumentScene(index);
+        
+        QPointF scenePos = mapToScene(event->pos());
+        QPointF widgetPos = pCrntItem->mapFromScene(scenePos);
+        if (pCrntItem->shouldSetActiveSceneForClickAt(widgetPos)) {
+            UBApplication::boardController->setActiveDocumentScene(index);
+        }
 	}
 	QGraphicsView::mousePressEvent(event);
 }
