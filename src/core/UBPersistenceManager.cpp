@@ -803,7 +803,8 @@ void UBPersistenceManager::persistDocumentScene(UBDocumentProxy* pDocumentProxy,
 {
     checkIfDocumentRepositoryExists();
 
-    pScene->deselectAllItems();
+    if (!noSvg) 
+        pScene->deselectAllItems();
 
     generatePathIfNeeded(pDocumentProxy);
 
