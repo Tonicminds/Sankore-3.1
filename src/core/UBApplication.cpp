@@ -629,8 +629,10 @@ bool UBApplication::eventFilter(QObject *obj, QEvent *event)
 
     if (event->type() == QEvent::TabletLeaveProximity)
     {
-        if (boardController && boardController->controlView())
+        if (boardController && boardController->controlView()) {
             boardController->controlView()->forcedTabletRelease();
+            boardController->persistCurrentScene(true);
+        }
     }
 
 
