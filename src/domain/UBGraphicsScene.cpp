@@ -727,6 +727,9 @@ void UBGraphicsScene::moveTo(const QPointF &pPoint)
 
 void UBGraphicsScene::drawLineTo(const QPointF &pEndPoint, const qreal &pWidth, bool bLineStyle)
 {
+    QElapsedTimer elapsed;
+    elapsed.start();
+
     if (mPreviousWidth == -1.0)
         mPreviousWidth = pWidth;
 
@@ -774,6 +777,8 @@ void UBGraphicsScene::drawLineTo(const QPointF &pEndPoint, const qreal &pWidth, 
         mPreviousPoint = pEndPoint;
         mPreviousWidth = pWidth;
     }
+
+    qDebug() << "drawLineTo() took" << elapsed.elapsed();
 }
 
 void UBGraphicsScene::eraseLineTo(const QPointF &pEndPoint, const qreal &pWidth)
