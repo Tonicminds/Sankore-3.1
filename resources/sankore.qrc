@@ -382,5 +382,8 @@
         <file>images/trapFlashPalette/trappedSoundIcon.svg</file>
         <file>images/trapFlashPalette/trappedVideoIcon.svg</file>
         <file>images/trapFlashPalette/trappedIcon.svg</file>
+        <file>images/monitorB.svg</file>
+        <file>images/monitorA.svg</file>
+        <file>images/monitorBStuck.svg</file>
     </qresource>
 </RCC>

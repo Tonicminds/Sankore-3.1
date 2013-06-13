@@ -599,6 +599,16 @@ void UBApplication::insertSpaceToToolbarBeforeAction(QToolBar* toolbar, QAction*
     toolbar->insertWidget(action, spacer);
 }
 
+bool UBApplication::event(QEvent * event) {
+    qDebug() << "UBApplication::event =" << event;
+    if (event->type() == QEvent::TabletEnterProximity ||
+        event->type() == QEvent::TabletLeaveProximity)
+    {
+        if (boardController && boardController->controlView())
+            return QApplication::sendEvent(boardController->controlView(), event);
+    }
+    return QApplication::event(event);
+}
 
 bool UBApplication::eventFilter(QObject *obj, QEvent *event)
 {
@@ -619,8 +629,10 @@ bool UBApplication::eventFilter(QObject *obj, QEvent *event)
 
     if (event->type() == QEvent::TabletLeaveProximity)
     {
-        if (boardController && boardController->controlView())
+        if (boardController && boardController->controlView()) {
             boardController->controlView()->forcedTabletRelease();
+            boardController->persistCurrentScene(true);
+        }
     }
 
 

@@ -146,7 +146,8 @@ class UBBoardController : public UBDocumentContainer
             return mSystemScaleFactor;
         }
         qreal currentZoom();
-        void persistCurrentScene(UBDocumentProxy *pProxy = 0);
+        void persistCurrentScene(const bool noSvg) { return persistCurrentScene(0, noSvg); }
+        void persistCurrentScene(UBDocumentProxy *pProxy = 0, const bool noSvg = false);
         void showNewVersionAvailable(bool automatic, const UBVersion &installedVersion, const UBSoftwareUpdate &softwareUpdate);
         void setBoxing(QRect displayRect);
         void setToolbarTexts();

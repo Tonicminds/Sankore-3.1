@@ -799,7 +799,7 @@ void UBPersistenceManager::reassignDocProxy(UBDocumentProxy *newDocument, UBDocu
     return mSceneCache.reassignDocProxy(newDocument, oldDocument);
 }
 
-void UBPersistenceManager::persistDocumentScene(UBDocumentProxy* pDocumentProxy, UBGraphicsScene* pScene, const int pSceneIndex)
+void UBPersistenceManager::persistDocumentScene(UBDocumentProxy* pDocumentProxy, UBGraphicsScene* pScene, const int pSceneIndex, const bool noSvg)
 {
     checkIfDocumentRepositoryExists();
 
@@ -820,9 +820,17 @@ void UBPersistenceManager::persistDocumentScene(UBDocumentProxy* pDocumentProxy,
 
     if (pScene->isModified() || teacherGuideModified)
     {
-        UBSvgSubsetAdaptor::persistScene(pDocumentProxy, pScene, pSceneIndex);
+        if (!noSvg) {
+            QElapsedTimer svgTimer;
+            svgTimer.start();
+            UBSvgSubsetAdaptor::persistScene(pDocumentProxy, pScene, pSceneIndex);
+            qDebug() << "SVG persist took  " << svgTimer.elapsed() << "ms";
+        }
 
+        QElapsedTimer thumbTimer;
+        thumbTimer.start();
         UBThumbnailAdaptor::persistScene(pDocumentProxy, pScene, pSceneIndex);
+        qDebug() << "Thumb persist took" << thumbTimer.elapsed() << "ms";
 
         pScene->setModified(false);
     }

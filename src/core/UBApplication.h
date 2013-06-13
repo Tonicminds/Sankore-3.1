@@ -89,6 +89,7 @@ class UBApplication : public QtSingleApplication
         void insertSpaceToToolbarBeforeAction(QToolBar* toolbar, QAction* action, int width = -1);
 
         int toolBarHeight();
+        bool event(QEvent * event);
         bool eventFilter(QObject *obj, QEvent *event);
 
         bool isVerbose() { return mIsVerbose;}

@@ -889,13 +889,25 @@ void UBSceneThumbnailNavigPixmap::paint(QPainter *painter, const QStyleOptionGra
         else
             painter->drawPixmap(3*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/menuDisabled.svg"));
     }
-    if (bButtonsVisible || sceneIndex() == UBApplication::applicationController->userSceneIndex()) {
-        if(bCanStickOnPreviousViews)
-            painter->drawPixmap(4*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/toolbar/display.png"));
-        else
-            painter->drawPixmap(4*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/toolbar/displayDisabled.png"));
+
+    int activeScene = UBApplication::boardController->activeSceneIndex();
+    int userScene = UBApplication::applicationController->userSceneIndex();
+
+    if (bButtonsVisible || sceneIndex() == (userScene != -1 ? userScene : activeScene - 1)) {
+        QPointF br = this->boundingRect().bottomRight();
+        painter->drawPixmap(br.x() - BUTTONSIZE, br.y() - BUTTONSIZE, BUTTONSIZE, BUTTONSIZE, 
+            QPixmap(userScene == -1 ? ":images/monitorB.svg" : ":images/monitorBStuck.svg"));
+    }
+    if (bButtonsVisible || sceneIndex() == activeScene) {
+        QPointF br = this->boundingRect().bottomRight();
+        painter->drawPixmap(br.x() - 2*(BUTTONSIZE + BUTTONSPACING), br.y() - BUTTONSIZE, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/monitorA.svg"));
     }
 }
+
+bool UBSceneThumbnailNavigPixmap::shouldSetActiveSceneForClickAt(QPointF & pos) {
+    return !isPointerOverStickButton(pos);
+}
+
 
 void UBSceneThumbnailNavigPixmap::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
@@ -910,10 +922,20 @@ void UBSceneThumbnailNavigPixmap::mousePressEvent(QGraphicsSceneMouseEvent *even
         moveUpPage();
     if(bCanMoveDown && p.x() >= 3*(BUTTONSIZE + BUTTONSPACING) && p.x() <= 4*BUTTONSIZE + 3*BUTTONSPACING && p.y() >= 0 && p.y() <= BUTTONSIZE)
         moveDownPage();
-    if(bCanStickOnPreviousViews && p.x() >= 4*(BUTTONSIZE + BUTTONSPACING) && p.x() <= 5*BUTTONSIZE + 4*BUTTONSPACING && p.y() >= 0 && p.y() <= BUTTONSIZE)
+
+    if(bCanStickOnPreviousViews && isPointerOverStickButton(p))
         stickPageOnPreviousViews();
 
     event->accept();
+}
+
+bool UBSceneThumbnailNavigPixmap::isPointerOverStickButton(QPointF & p) {
+    QPointF br = this->boundingRect().bottomRight();
+
+    return p.x() >= br.x() - BUTTONSIZE 
+        && p.x() <= br.x() 
+        && p.y() >= br.y() - BUTTONSIZE 
+        && p.y() <= br.y();
 }
 
 void UBSceneThumbnailNavigPixmap::updateButtonsState()
@@ -976,6 +998,7 @@ void UBSceneThumbnailNavigPixmap::stickPageOnPreviousViews()
     }
 
     UBApplication::boardController->setActiveDocumentScene(UBApplication::boardController->activeSceneIndex());
+    UBApplication::boardController->regenerateThumbnails();
 }
 
 void UBImgTextThumbnailElement::Place(int row, int col, qreal width, qreal height)
