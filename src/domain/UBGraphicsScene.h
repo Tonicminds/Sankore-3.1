@@ -390,6 +390,7 @@ public slots:
 
         QPointF mPreviousPoint;
         qreal mPreviousWidth;
+        int mMarkerDecimateCount;
 
         QList<UBGraphicsPolygonItem*> mPreviousPolygonItems;
 
