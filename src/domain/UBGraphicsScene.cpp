@@ -454,6 +454,8 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
         mCurrentStroke = NULL;
     }
 
+    mStrokeDecimateCount = STROKE_DECIMATE;
+
     return accepted;
 }
 
