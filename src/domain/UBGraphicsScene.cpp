@@ -793,6 +793,13 @@ void UBGraphicsScene::drawLineTo(const QPointF &pEndPoint, const qreal &pWidth, 
 
 void UBGraphicsScene::eraseLineTo(const QPointF &pEndPoint, const qreal &pWidth)
 {
+    mStrokeDecimateCount--;
+    if (mStrokeDecimateCount > 0) {
+        return;
+    }
+    // else
+    mStrokeDecimateCount = STROKE_DECIMATE;
+
     const QLineF line(mPreviousPoint, pEndPoint);
     mPreviousPoint = pEndPoint;
 
