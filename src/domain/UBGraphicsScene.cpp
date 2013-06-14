@@ -267,7 +267,7 @@ void UBZLayerController::setLayerType(QGraphicsItem *pItem, itemLayerType::Enum 
    pItem->setData(UBGraphicsItemData::itemLayerType, QVariant(pNewType));
 }
 
-#define MARKER_DECIMATE 5
+#define STROKE_DECIMATE 5
 
 UBGraphicsScene::UBGraphicsScene(UBDocumentProxy* parent, bool enableUndoRedoStack)
     : UBCoreGraphicsScene(parent)
@@ -291,7 +291,7 @@ UBGraphicsScene::UBGraphicsScene(UBDocumentProxy* parent, bool enableUndoRedoSta
     , magniferDisplayViewWidget(0)
     , mZLayerController(new UBZLayerController(this))
     , mpLastPolygon(NULL)
-    , mMarkerDecimateCount(MARKER_DECIMATE)
+    , mStrokeDecimateCount(STROKE_DECIMATE)
 {
     UBCoreGraphicsScene::setObjectName("BoardScene");
 #ifdef __ppc__
@@ -738,12 +738,12 @@ void UBGraphicsScene::drawLineTo(const QPointF &pEndPoint, const qreal &pWidth, 
 
     UBGraphicsPolygonItem *polygonItem = lineToPolygonItem(QLineF(mPreviousPoint, pEndPoint), pWidth);
     if(!polygonItem->brush().isOpaque()) {
-        mMarkerDecimateCount--;
-        if (mMarkerDecimateCount > 0) {
+        mStrokeDecimateCount--;
+        if (mStrokeDecimateCount > 0) {
             return;
         }
         // else
-        mMarkerDecimateCount = MARKER_DECIMATE;
+        mStrokeDecimateCount = STROKE_DECIMATE;
 
         // -------------------------------------------------------------------------------------
         // Here we substract the polygons that are overlapping in order to keep the transparency
