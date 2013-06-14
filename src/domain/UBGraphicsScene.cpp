@@ -267,6 +267,8 @@ void UBZLayerController::setLayerType(QGraphicsItem *pItem, itemLayerType::Enum 
    pItem->setData(UBGraphicsItemData::itemLayerType, QVariant(pNewType));
 }
 
+#define MARKER_DECIMATE 5
+
 UBGraphicsScene::UBGraphicsScene(UBDocumentProxy* parent, bool enableUndoRedoStack)
     : UBCoreGraphicsScene(parent)
     , mEraser(0)
@@ -289,6 +291,7 @@ UBGraphicsScene::UBGraphicsScene(UBDocumentProxy* parent, bool enableUndoRedoSta
     , magniferDisplayViewWidget(0)
     , mZLayerController(new UBZLayerController(this))
     , mpLastPolygon(NULL)
+    , mMarkerDecimateCount(MARKER_DECIMATE)
 {
     UBCoreGraphicsScene::setObjectName("BoardScene");
 #ifdef __ppc__
@@ -727,13 +730,21 @@ void UBGraphicsScene::moveTo(const QPointF &pPoint)
 
 void UBGraphicsScene::drawLineTo(const QPointF &pEndPoint, const qreal &pWidth, bool bLineStyle)
 {
+    QElapsedTimer elapsed;
+    elapsed.start();
+
     if (mPreviousWidth == -1.0)
         mPreviousWidth = pWidth;
 
     UBGraphicsPolygonItem *polygonItem = lineToPolygonItem(QLineF(mPreviousPoint, pEndPoint), pWidth);
+    if(!polygonItem->brush().isOpaque()) {
+        mMarkerDecimateCount--;
+        if (mMarkerDecimateCount > 0) {
+            return;
+        }
+        // else
+        mMarkerDecimateCount = MARKER_DECIMATE;
 
-    if (!polygonItem->brush().isOpaque())
-    {
         // -------------------------------------------------------------------------------------
         // Here we substract the polygons that are overlapping in order to keep the transparency
         // -------------------------------------------------------------------------------------
@@ -774,6 +785,8 @@ void UBGraphicsScene::drawLineTo(const QPointF &pEndPoint, const qreal &pWidth, 
         mPreviousPoint = pEndPoint;
         mPreviousWidth = pWidth;
     }
+
+    qDebug() << "drawLineTo() took" << elapsed.elapsed();
 }
 
 void UBGraphicsScene::eraseLineTo(const QPointF &pEndPoint, const qreal &pWidth)
