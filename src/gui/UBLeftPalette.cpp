@@ -34,7 +34,7 @@ UBLeftPalette::UBLeftPalette(QWidget *parent, const char *name):
 {
     setObjectName(name);
     setOrientation(eUBDockOrientation_Left);
-    mCollapseWidth = 150;
+    mCollapsible = false;
 
     bool isCollapsed = false;
     if(mCurrentMode == eUBDockPaletteWidget_BOARD){
