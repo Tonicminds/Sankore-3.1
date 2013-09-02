@@ -30,7 +30,7 @@
  * \brief The constructor
  */
 UBLeftPalette::UBLeftPalette(QWidget *parent, const char *name):
-    UBDockPalette(eUBDockPaletteType_LEFT, parent)
+    UBDockPalette(eUBDockPaletteType_LEFT, parent, "UBLeftPalette", false)
 {
     setObjectName(name);
     setOrientation(eUBDockOrientation_Left);
