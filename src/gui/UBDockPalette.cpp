@@ -41,7 +41,7 @@
 /**
  * \brief The constructor
  */
-UBDockPalette::UBDockPalette(eUBDockPaletteType paletteType, QWidget *parent, const char *name)
+UBDockPalette::UBDockPalette(eUBDockPaletteType paletteType, QWidget *parent, const char *name, const bool resizable)
 :QWidget(parent, Qt::FramelessWindowHint | Qt::X11BypassWindowManagerHint)
 , mCurrentMode(eUBDockPaletteWidget_BOARD)
 , mOrientation(eUBDockOrientation_Left)
@@ -56,7 +56,7 @@ UBDockPalette::UBDockPalette(eUBDockPaletteType paletteType, QWidget *parent, co
 , mpLayout(NULL)
 , mCurrentTab(0)
 , mPaletteType(paletteType)
-, mTabPalette(new UBTabDockPalette(this, parent))
+, mTabPalette(new UBTabDockPalette(this, parent, resizable))
 {
     setObjectName(name);
 
@@ -575,11 +575,12 @@ bool UBDockPalette::switchMode(eUBDockPaletteWidgetMode mode)
 }
 
 
-UBTabDockPalette::UBTabDockPalette(UBDockPalette *dockPalette, QWidget *parent) :
+UBTabDockPalette::UBTabDockPalette(UBDockPalette *dockPalette, QWidget *parent, const bool resizable) :
             QWidget(parent)
 , dock(dockPalette)
 , mVerticalOffset(0)
 , mFlotable(false)
+, mResizable(resizable)
 {
     int numTabs = dock->mTabWidgets.size();
     resize(2 * dock->border(), (numTabs * TABSIZE) + qMax(numTabs - 1, 0) * dock->tabSpacing());
@@ -672,10 +673,10 @@ void UBTabDockPalette::mousePressEvent(QMouseEvent *event)
 
     switch(dock->mOrientation) {
     case eUBDockOrientation_Left:
-        dock->mCanResize = true;
+        dock->mCanResize = mResizable;
         break;
     case eUBDockOrientation_Right:
-        dock->mCanResize = true;
+        dock->mCanResize = mResizable;
         break;
     case eUBDockOrientation_Top:
         // Not supported yet

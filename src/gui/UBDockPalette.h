@@ -71,7 +71,7 @@ class UBTabDockPalette : public QWidget
 
 public:
 
-    UBTabDockPalette(UBDockPalette *dockPalette, QWidget *parent = 0);
+    UBTabDockPalette(UBDockPalette *dockPalette, QWidget *parent = 0, const bool resizable = true);
     ~UBTabDockPalette();
 
 protected:
@@ -84,6 +84,7 @@ private:
     UBDockPalette *dock;
     int mVerticalOffset;
     bool mFlotable;
+    bool mResizable;
 };
 
 
@@ -100,7 +101,11 @@ class UBDockPalette : public QWidget
     friend class UBTabDockPalette;
 
 public:
-    UBDockPalette(eUBDockPaletteType paletteType, QWidget* parent=0, const char* name="UBDockPalette");
+    UBDockPalette(
+        eUBDockPaletteType paletteType
+        , QWidget* parent=0
+        , const char* name="UBDockPalette"
+        , const bool resizable=true);
     ~UBDockPalette();
 
     eUBDockOrientation orientation();
