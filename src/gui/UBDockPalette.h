@@ -169,6 +169,8 @@ protected:
     bool mCanResize;
     /** A flag indicating if the palette has been resized between a click and a release */
     bool mResized;
+    /** A flag indicating if the palette can be collapsed at all */
+    bool mCollapsible;
     /** The width that trig the collapse */
     int mCollapseWidth;
     /** The last width of the palette */

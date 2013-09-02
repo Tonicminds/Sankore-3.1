@@ -49,6 +49,7 @@ UBDockPalette::UBDockPalette(eUBDockPaletteType paletteType, QWidget *parent, co
 , mPreferredHeight(100)
 , mCanResize(false)
 , mResized(false)
+, mCollapsible(true)
 , mCollapseWidth(150)
 , mLastWidth(-1)
 , mHTab(0)
@@ -322,6 +323,9 @@ void UBDockPalette::showTabWidget(int tabIndex)
  */
 void UBDockPalette::toggleCollapseExpand()
 {
+    if (!mCollapsible)
+        return;
+
     if(width() < mCollapseWidth)
         resize(mLastWidth,height());
     else{
