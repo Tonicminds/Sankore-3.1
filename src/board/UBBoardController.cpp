@@ -227,7 +227,9 @@ void UBBoardController::setBoxing(QRect displayRect)
         return;
     }
 
-    qreal controlWidth = (qreal)mMainWindow->centralWidget()->width();
+    int paletteWidth = paletteManager()->leftPalette()->width();
+    
+    qreal controlWidth = (qreal)mMainWindow->centralWidget()->width() - paletteWidth;
     qreal controlHeight = (qreal)mMainWindow->centralWidget()->height();
     qreal displayWidth = (qreal)displayRect.width();
     qreal displayHeight = (qreal)displayRect.height();
@@ -239,7 +241,7 @@ void UBBoardController::setBoxing(QRect displayRect)
     {
         // Pillarboxing
         int boxWidth = (controlWidth - (displayWidth * (controlHeight / displayHeight))) / 2;
-        mControlLayout->setContentsMargins(boxWidth, 0, boxWidth, 0);
+        mControlLayout->setContentsMargins(paletteWidth + boxWidth, 0, boxWidth, 0);
     }
     else if (displayRatio > controlRatio)
     {
