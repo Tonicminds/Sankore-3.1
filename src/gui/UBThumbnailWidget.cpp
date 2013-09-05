@@ -867,6 +867,8 @@ void UBSceneThumbnailNavigPixmap::paint(QPainter *painter, const QStyleOptionGra
     Q_UNUSED(option);
     Q_UNUSED(widget);
 
+    QPointF br = this->boundingRect().bottomRight();
+
     UBSceneThumbnailPixmap::paint(painter, option, widget);
     if(bButtonsVisible)
     {
@@ -892,13 +894,13 @@ void UBSceneThumbnailNavigPixmap::paint(QPainter *painter, const QStyleOptionGra
     int userScene = UBApplication::applicationController->userSceneIndex();
 
     if (bButtonsVisible || sceneIndex() == (userScene != -1 ? userScene : activeScene - 1)) {
-        QPointF br = this->boundingRect().bottomRight();
         painter->drawPixmap(br.x() - BUTTONSIZE, br.y() - BUTTONSIZE, BUTTONSIZE, BUTTONSIZE, 
             QPixmap(userScene == -1 ? ":images/monitorB.svg" : ":images/monitorBStuck.svg"));
     }
     if (bButtonsVisible || sceneIndex() == activeScene) {
-        QPointF br = this->boundingRect().bottomRight();
-        painter->drawPixmap(br.x() - 2*(BUTTONSIZE + BUTTONSPACING), br.y() - BUTTONSIZE, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/monitorA.svg"));
+        QString pixmapName = QString(":images/monitorA%1.svg").arg(sceneIndex() != activeScene ? "Hover" : "");
+        painter->drawPixmap(br.x() - 2*(BUTTONSIZE + BUTTONSPACING), br.y() - BUTTONSIZE, BUTTONSIZE, BUTTONSIZE, 
+            QPixmap(pixmapName));
     }
 }
 
