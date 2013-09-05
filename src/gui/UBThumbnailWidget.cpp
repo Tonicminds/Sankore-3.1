@@ -893,12 +893,21 @@ void UBSceneThumbnailNavigPixmap::paint(QPainter *painter, const QStyleOptionGra
     int activeScene = UBApplication::boardController->activeSceneIndex();
     int userScene = UBApplication::applicationController->userSceneIndex();
 
-    if (bButtonsVisible || sceneIndex() == (userScene != -1 ? userScene : activeScene - 1)) {
+    // TODO risolvere bug di monitorB fantasma in doc a 3 pagine
+
+    bool isSecondary = sceneIndex() == (userScene == -1 ? activeScene - 1 : userScene);
+    if (bButtonsVisible || isSecondary) {
+        QString pixmapName = QString(":images/monitorB%1%2.svg").arg(
+            bButtonsVisible ^ userScene == -1 ? "" : "Stuck",
+            bButtonsVisible ? "Hover" : ""
+            );
         painter->drawPixmap(br.x() - BUTTONSIZE, br.y() - BUTTONSIZE, BUTTONSIZE, BUTTONSIZE, 
-            QPixmap(userScene == -1 ? ":images/monitorB.svg" : ":images/monitorBStuck.svg"));
+            QPixmap(pixmapName));
     }
-    if (bButtonsVisible || sceneIndex() == activeScene) {
-        QString pixmapName = QString(":images/monitorA%1.svg").arg(sceneIndex() != activeScene ? "Hover" : "");
+    bool isPrimary = sceneIndex() == activeScene;
+    if (bButtonsVisible || isPrimary) {
+        QString pixmapName = QString(":images/monitorA%1.svg")
+            .arg(!isPrimary ? "Hover" : "");
         painter->drawPixmap(br.x() - 2*(BUTTONSIZE + BUTTONSPACING), br.y() - BUTTONSIZE, BUTTONSIZE, BUTTONSIZE, 
             QPixmap(pixmapName));
     }
