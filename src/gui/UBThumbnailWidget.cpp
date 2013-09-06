@@ -893,8 +893,6 @@ void UBSceneThumbnailNavigPixmap::paint(QPainter *painter, const QStyleOptionGra
     int activeScene = UBApplication::boardController->activeSceneIndex();
     int userScene = UBApplication::applicationController->userSceneIndex();
 
-    // TODO risolvere bug di monitorB fantasma in doc a 3 pagine
-
     bool isUserSceneSet = userScene != -1;
     bool isSecondary = sceneIndex() == (!isUserSceneSet ? activeScene - 1 : userScene);
     bool isStuck = isUserSceneSet && sceneIndex() == userScene;

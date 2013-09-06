@@ -133,6 +133,7 @@ void UBDocumentNavigator::onScrollToSelectedPage(int index)
         {
             el.getThumbnail()->setSelected(false);
         }
+        el.getThumbnail()->update();
         c++;
     }
 }
