@@ -895,10 +895,11 @@ void UBSceneThumbnailNavigPixmap::paint(QPainter *painter, const QStyleOptionGra
 
     // TODO risolvere bug di monitorB fantasma in doc a 3 pagine
 
-    bool isSecondary = sceneIndex() == (userScene == -1 ? activeScene - 1 : userScene);
+    bool isUserSceneSet = userScene != -1;
+    bool isSecondary = sceneIndex() == (!isUserSceneSet ? activeScene - 1 : userScene);
     if (bButtonsVisible || isSecondary) {
         QString pixmapName = QString(":images/monitorB%1%2.svg").arg(
-            bButtonsVisible ^ userScene == -1 ? "" : "Stuck",
+            bButtonsVisible ^ !isUserSceneSet ? "" : "Stuck",
             bButtonsVisible ? "Hover" : ""
             );
         painter->drawPixmap(br.x() - BUTTONSIZE, br.y() - BUTTONSIZE, BUTTONSIZE, BUTTONSIZE, 
