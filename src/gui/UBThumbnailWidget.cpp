@@ -897,10 +897,17 @@ void UBSceneThumbnailNavigPixmap::paint(QPainter *painter, const QStyleOptionGra
 
     bool isUserSceneSet = userScene != -1;
     bool isSecondary = sceneIndex() == (!isUserSceneSet ? activeScene - 1 : userScene);
+    bool isStuck = isUserSceneSet && sceneIndex() == userScene;
+
     if (bButtonsVisible || isSecondary) {
+        bool stuck = 
+            (isStuck && !bButtonsVisible) ||
+            (!isStuck && bButtonsVisible) ||
+            (!isSecondary && bButtonsVisible);
+        bool hover = bButtonsVisible;
         QString pixmapName = QString(":images/monitorB%1%2.svg").arg(
-            bButtonsVisible ^ !isUserSceneSet ? "" : "Stuck",
-            bButtonsVisible ? "Hover" : ""
+            stuck ? "Stuck" : "",
+            hover ? "Hover" : ""
             );
         painter->drawPixmap(br.x() - BUTTONSIZE, br.y() - BUTTONSIZE, BUTTONSIZE, BUTTONSIZE, 
             QPixmap(pixmapName));
