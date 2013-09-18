@@ -527,15 +527,15 @@ void UBApplication::decorateActionMenu(QAction* action)
             tb->setPopupMode(QToolButton::InstantPopup);
             QMenu* menu = new QMenu(mainWindow);
 
-            QActionGroup* pageSizeGroup = new QActionGroup(mainWindow);
-            pageSizeGroup->addAction(mainWindow->actionWidePageSize);
-            pageSizeGroup->addAction(mainWindow->actionRegularPageSize);
-            pageSizeGroup->addAction(mainWindow->actionCustomPageSize);
+            //QActionGroup* pageSizeGroup = new QActionGroup(mainWindow);
+            //pageSizeGroup->addAction(mainWindow->actionWidePageSize);
+            //pageSizeGroup->addAction(mainWindow->actionRegularPageSize);
+            //pageSizeGroup->addAction(mainWindow->actionCustomPageSize);
 
-            QMenu* documentSizeMenu = menu->addMenu(QIcon(":/images/toolbar/pageSize.png"),tr("Page Size"));
-            documentSizeMenu->addAction(mainWindow->actionWidePageSize);
-            documentSizeMenu->addAction(mainWindow->actionRegularPageSize);
-            documentSizeMenu->addAction(mainWindow->actionCustomPageSize);
+            //QMenu* documentSizeMenu = menu->addMenu(QIcon(":/images/toolbar/pageSize.png"),tr("Page Size"));
+            //documentSizeMenu->addAction(mainWindow->actionWidePageSize);
+            //documentSizeMenu->addAction(mainWindow->actionRegularPageSize);
+            //documentSizeMenu->addAction(mainWindow->actionCustomPageSize);
             menu->addAction(mainWindow->actionCut);
             menu->addAction(mainWindow->actionCopy);
             menu->addAction(mainWindow->actionPaste);
@@ -543,9 +543,9 @@ void UBApplication::decorateActionMenu(QAction* action)
             menu->addAction(mainWindow->actionSleep);
 
             menu->addSeparator();
-            menu->addAction(mainWindow->actionPreferences);
-            menu->addAction(mainWindow->actionMultiScreen);
-            menu->addAction(mainWindow->actionImportUniboardDocuments);
+            //menu->addAction(mainWindow->actionPreferences);
+            //menu->addAction(mainWindow->actionMultiScreen);
+            //menu->addAction(mainWindow->actionImportUniboardDocuments);
             // SANKORE-48: Hide the check update action if the setting
             // EnableAutomaticSoftwareUpdates is false in Uniboard.config
             if(UBSettings::settings()->appEnableAutomaticSoftwareUpdates->get().toBool())
@@ -553,17 +553,18 @@ void UBApplication::decorateActionMenu(QAction* action)
             else
                 mainWindow->actionCheckUpdate->setEnabled(false);
 
-            menu->addSeparator();
-            menu->addAction(mainWindow->actionTutorial);
-            menu->addAction(mainWindow->actionSankoreEditor);
+            //menu->addSeparator();
+            //menu->addAction(mainWindow->actionTutorial);
+            //menu->addAction(mainWindow->actionSankoreEditor);
 
+#if 0
 #ifndef Q_WS_X11 // No Podcast on Linux yet
             menu->addAction(mainWindow->actionPodcast);
             mainWindow->actionPodcast->setText(tr("Podcast"));
 #endif
-
+#endif
             menu->addSeparator();
-            menu->addAction(mainWindow->actionQuit);
+            //menu->addAction(mainWindow->actionQuit);
 
             tb->setMenu(menu);
         }
