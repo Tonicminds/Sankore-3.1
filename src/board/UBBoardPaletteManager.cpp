@@ -654,7 +654,9 @@ void UBBoardPaletteManager::addItem(const QUrl& pUrl)
 
 void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool isInit)
 {
-    bool rightPaletteVisible = mRightPalette->switchMode(newMode);
+    bool rightPaletteVisible = 
+        false; // we don't need any right palette
+        //mRightPalette->switchMode(newMode);
     bool leftPaletteVisible = mLeftPalette->switchMode(newMode);
 
     if (newMode != eUBDockPaletteWidget_BOARD)
