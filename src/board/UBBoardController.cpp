@@ -247,7 +247,7 @@ void UBBoardController::setBoxing(QRect displayRect)
     {
         // Letterboxing
         int boxHeight = (controlHeight - (displayHeight * (controlWidth / displayWidth))) / 2;
-        mControlLayout->setContentsMargins(0, boxHeight, 0, boxHeight);
+        mControlLayout->setContentsMargins(paletteWidth, boxHeight, 0, boxHeight);
     }
     else
     {
