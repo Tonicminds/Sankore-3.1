@@ -601,7 +601,6 @@ void UBApplication::insertSpaceToToolbarBeforeAction(QToolBar* toolbar, QAction*
 }
 
 bool UBApplication::event(QEvent * event) {
-    qDebug() << "UBApplication::event =" << event;
     if (event->type() == QEvent::TabletEnterProximity ||
         event->type() == QEvent::TabletLeaveProximity)
     {
