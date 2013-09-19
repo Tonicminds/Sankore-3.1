@@ -548,10 +548,10 @@ void UBApplication::decorateActionMenu(QAction* action)
             //menu->addAction(mainWindow->actionImportUniboardDocuments);
             // SANKORE-48: Hide the check update action if the setting
             // EnableAutomaticSoftwareUpdates is false in Uniboard.config
-            if(UBSettings::settings()->appEnableAutomaticSoftwareUpdates->get().toBool())
-                menu->addAction(mainWindow->actionCheckUpdate);
-            else
-                mainWindow->actionCheckUpdate->setEnabled(false);
+            //if(UBSettings::settings()->appEnableAutomaticSoftwareUpdates->get().toBool())
+            //    menu->addAction(mainWindow->actionCheckUpdate);
+            //else
+            //    mainWindow->actionCheckUpdate->setEnabled(false);
 
             //menu->addSeparator();
             //menu->addAction(mainWindow->actionTutorial);
