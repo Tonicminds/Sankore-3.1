@@ -176,7 +176,10 @@ void UBApplicationController::screenLayoutChanged()
        UBApplication::boardController->setBoxing(QRect());
     }
 
-    adjustPreviousViews(0, 0);
+    adjustPreviousViews(
+        UBApplication::boardController->activeSceneIndex(),
+        UBApplication::boardController->selectedDocument()
+        );
 }
 
 
