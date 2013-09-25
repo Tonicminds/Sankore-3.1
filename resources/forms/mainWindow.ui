@@ -72,6 +72,9 @@
    <addaction name="actionGroupItems"/>
    <addaction name="actionBoard"/>
    <addaction name="actionDesktop"/>
+   <addaction name="separator"/>
+   <addaction name="actionRestart"/>
+   <addaction name="separator"/>
    <addaction name="actionMenu"/>
   </widget>
   <widget class="QToolBar" name="webToolBar">
@@ -388,6 +391,18 @@
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionRestart">
+   <property name="icon">
+    <iconset resource="../sankore.qrc">
+     <normaloff>:/images/toolbar/restart.png</normaloff>:/images/toolbar/restart.png</iconset>
+   </property>
+   <property name="text">
+    <string>Restart</string>
+   </property>
+   <property name="toolTip">
+    <string>Restart Open-Sankoré</string>
    </property>
   </action>
   <action name="actionEraserSmall">
