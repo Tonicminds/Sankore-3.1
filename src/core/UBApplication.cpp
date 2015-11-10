@@ -564,7 +564,7 @@ void UBApplication::decorateActionMenu(QAction* action)
 #endif
 #endif
             menu->addSeparator();
-            //menu->addAction(mainWindow->actionQuit);
+            menu->addAction(mainWindow->actionQuit);
 
             tb->setMenu(menu);
         }
