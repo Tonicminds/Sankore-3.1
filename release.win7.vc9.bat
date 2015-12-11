@@ -14,7 +14,7 @@ REM You should have received a copy of the GNU General Public License
 REM along with this program.  If not, see <http://www.gnu.org/licenses/>.
 REM ---------------------------------------------------------------------
 
-set QT_DIR=..\Qt-4.8
+set QT_DIR=E:\Qt-sankore3.1\Qt-sankore3.1
 set QT_BIN=%QT_DIR%\bin
 
 set PROGRAMS_FILE_PATH=C:\Program Files
@@ -42,7 +42,7 @@ IF NOT EXIST "%QT_DIR%\lib\QtCore4.dll" GOTO EXIT_WITH_ERROR
 rmdir /S /Q %BUILD_DIR%
 rmdir /S /Q install
 
-"%QT_BIN%\qmake.exe" Sankore_3.1.pro
+"%QT_BIN%\qmake.exe" Sankore_3_1.pro
 
 %LRELEASE% Sankore_3.1.pro
 %LRELEASE% %BASE_QT_TRANSLATIONS_DIRECTORY%\translations.pro
