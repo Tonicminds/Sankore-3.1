@@ -52,44 +52,44 @@ Source: "..\Sankore-ThirdParty\openssl\win32\libeay32.dll"; DestDir:"{app}"; Fla
 Source: "..\Sankore-ThirdParty\openssl\win32\ssleay32.dll"; DestDir:"{app}"; Flags: ignoreversion
 
 ;Qt base dll
-Source: "..\Qt-4.8\lib\QtScript4.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Qt-4.8\lib\QtGui4.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Qt-4.8\lib\QtXml4.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Qt-4.8\lib\QtCore4.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Qt-4.8\lib\QtWebKit4.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Qt-4.8\lib\phonon4.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Qt-4.8\lib\QtNetwork4.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Qt-4.8\lib\QtSvg4.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\lib\QtScript4.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\lib\QtGui4.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\lib\QtXml4.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\lib\QtCore4.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\lib\QtWebKit4.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\lib\phonon4.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\lib\QtNetwork4.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\lib\QtSvg4.dll"; DestDir: "{app}"; Flags: ignoreversion
 
 ;Qt plugins
-Source: "..\Qt-4.8\plugins\accessible\qtaccessiblecompatwidgets4.dll"; DestDir: "{app}\accessible"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\accessible\qtaccessiblewidgets4.dll"; DestDir: "{app}\accessible"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\bearer\qgenericbearer4.dll"; DestDir: "{app}\bearer"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\bearer\qnativewifibearer4.dll"; DestDir: "{app}\bearer"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\codecs\qcncodecs4.dll"; DestDir: "{app}\codecs"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\codecs\qjpcodecs4.dll"; DestDir: "{app}\codecs"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\codecs\qkrcodecs4.dll"; DestDir: "{app}\codecs"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\codecs\qtwcodecs4.dll"; DestDir: "{app}\codecs"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\graphicssystems\qglgraphicssystem4.dll"; DestDir: "{app}\graphicssystems"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\graphicssystems\qtracegraphicssystem4.dll"; DestDir: "{app}\graphicssystems"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\iconengines\qsvgicon4.dll"; DestDir: "{app}\iconengines"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\imageformats\qgif4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\imageformats\qico4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\imageformats\qjpeg4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\imageformats\qmng4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\imageformats\qsvg4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\imageformats\qtiff4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion
-Source: "..\Qt-4.8\plugins\phonon_backend\phonon_ds94.dll"; DestDir: "{app}\phonon_backend"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\accessible\qtaccessiblecompatwidgets4.dll"; DestDir: "{app}\accessible"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\accessible\qtaccessiblewidgets4.dll"; DestDir: "{app}\accessible"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\bearer\qgenericbearer4.dll"; DestDir: "{app}\bearer"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\bearer\qnativewifibearer4.dll"; DestDir: "{app}\bearer"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\codecs\qcncodecs4.dll"; DestDir: "{app}\codecs"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\codecs\qjpcodecs4.dll"; DestDir: "{app}\codecs"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\codecs\qkrcodecs4.dll"; DestDir: "{app}\codecs"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\codecs\qtwcodecs4.dll"; DestDir: "{app}\codecs"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\graphicssystems\qglgraphicssystem4.dll"; DestDir: "{app}\graphicssystems"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\graphicssystems\qtracegraphicssystem4.dll"; DestDir: "{app}\graphicssystems"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\iconengines\qsvgicon4.dll"; DestDir: "{app}\iconengines"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\imageformats\qgif4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\imageformats\qico4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\imageformats\qjpeg4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\imageformats\qmng4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\imageformats\qsvg4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\imageformats\qtiff4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion
+Source: "E:\Qt-sankore3.1\Qt-sankore3.1\plugins\phonon_backend\phonon_ds94.dll"; DestDir: "{app}\phonon_backend"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 ;qt multimedia plugins
-Source: "c:\OpenSankore\plugins\mediaservice\dsengine.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
-Source: "c:\OpenSankore\plugins\mediaservice\dsengined.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
-Source: "c:\OpenSankore\plugins\mediaservice\qtmedia_audioengine.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
-Source: "c:\OpenSankore\plugins\mediaservice\qtmedia_audioengined.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
+;Source: "c:\OpenSankore\plugins\mediaservice\dsengine.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
+;Source: "c:\OpenSankore\plugins\mediaservice\dsengined.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
+;Source: "c:\OpenSankore\plugins\mediaservice\qtmedia_audioengine.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
+;Source: "c:\OpenSankore\plugins\mediaservice\qtmedia_audioengined.dll"; DestDir: "c:\OpenSankore\plugins\mediaservice"; Flags: ignoreversion
 
-Source: "c:\OpenSankore\plugins\playlistformats\qtmultimediakit_m3u.dll"; DestDir: "c:\OpenSankore\plugins\playlistformats"; Flags: ignoreversion
-Source: "c:\OpenSankore\plugins\playlistformats\qtmultimediakit_m3ud.dll"; DestDir: "c:\OpenSankore\plugins\playlistformats"; Flags: ignoreversion
+;Source: "c:\OpenSankore\plugins\playlistformats\qtmultimediakit_m3u.dll"; DestDir: "c:\OpenSankore\plugins\playlistformats"; Flags: ignoreversion
+;Source: "c:\OpenSankore\plugins\playlistformats\qtmultimediakit_m3ud.dll"; DestDir: "c:\OpenSankore\plugins\playlistformats"; Flags: ignoreversion
 
 ;fonts for xpdf
 Source: "resources\windows\xpdfrc"; DestDir: "{app}"; Flags: ignoreversion

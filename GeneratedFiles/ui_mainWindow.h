@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainWindow.ui'
 **
-** Created: Fri 6. Nov 10:33:52 2015
+** Created: Mon 14. Dec 16:01:33 2015
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -774,6 +774,7 @@ public:
         boardToolBar->addAction(actionErase);
         boardToolBar->addAction(actionGroupItems);
         boardToolBar->addAction(actionBoard);
+        boardToolBar->addAction(actionDocument);
         boardToolBar->addAction(actionDesktop);
         boardToolBar->addSeparator();
         boardToolBar->addAction(actionRestart);
@@ -792,6 +793,7 @@ public:
         webToolBar->addAction(actionWebSmaller);
         webToolBar->addSeparator();
         webToolBar->addAction(actionBoard);
+        webToolBar->addAction(actionDocument);
         webToolBar->addAction(actionDesktop);
         webToolBar->addAction(actionMenu);
         documentToolBar->addAction(actionDocumentTools);
@@ -810,11 +812,13 @@ public:
         documentToolBar->addAction(actionAddToWorkingDocument);
         documentToolBar->addAction(actionDocumentAdd);
         documentToolBar->addAction(actionBoard);
+        documentToolBar->addAction(actionDocument);
         documentToolBar->addAction(actionDesktop);
         documentToolBar->addAction(actionMenu);
         tutorialToolBar->addAction(actionWebBack);
         tutorialToolBar->addAction(actionWebForward);
         tutorialToolBar->addAction(actionBoard);
+        tutorialToolBar->addAction(actionDocument);
         tutorialToolBar->addAction(actionMenu);
 
         retranslateUi(MainWindow);
