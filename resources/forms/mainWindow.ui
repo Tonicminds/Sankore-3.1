@@ -400,10 +400,10 @@
   <action name="actionRestart">
    <property name="icon">
     <iconset resource="../sankore.qrc">
-     <normaloff>:/images/toolbar/restart.png</normaloff>:/images/toolbar/restart.png</iconset>
+     <normaloff>:/images/toolbar/quitOn.png</normaloff>:/images/toolbar/quitOn.png</iconset>
    </property>
    <property name="text">
-    <string>Restart</string>
+    <string>New lesson</string>
    </property>
    <property name="toolTip">
     <string>Restart Open-Sankoré</string>

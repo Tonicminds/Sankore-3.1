@@ -165,7 +165,7 @@ UBSettings::UBSettings(QObject *parent)
 
     mUserSettings = new QSettings(userSettingsFile, QSettings::IniFormat, parent);
 
-    appPreferredLanguage = new UBSetting(this,"App","PreferredLanguage", "");
+    appPreferredLanguage = new UBSetting(this,"App","PreferredLanguage", "it_IT");
 
 
 //    init();

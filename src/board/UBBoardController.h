@@ -241,6 +241,7 @@ class UBBoardController : public UBDocumentContainer
         void freezeW3CWidget(QGraphicsItem* item, bool freeze);
         void startScript();
         void stopScript();
+		void restart();
 
     signals:
         void newPageAdded();

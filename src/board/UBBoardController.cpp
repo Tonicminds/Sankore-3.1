@@ -371,6 +371,7 @@ void UBBoardController::setToolCursor(int tool)
 }
 
 
+
 void UBBoardController::connectToolbar()
 {
     connect(mMainWindow->actionAdd, SIGNAL(triggered()), this, SLOT(addItem()));
@@ -389,9 +390,19 @@ void UBBoardController::connectToolbar()
     connect(mMainWindow->actionForward, SIGNAL(triggered()), this, SLOT(nextScene()));
     connect(mMainWindow->actionSleep, SIGNAL(triggered()), this, SLOT(stopScript()));
     connect(mMainWindow->actionSleep, SIGNAL(triggered()), this, SLOT(blackout()));
+	connect(mMainWindow->actionRestart, SIGNAL(triggered()), this, SLOT(restart()));
     connect(mMainWindow->actionVirtualKeyboard, SIGNAL(triggered(bool)), this, SLOT(showKeyboard(bool)));
     connect(mMainWindow->actionImportPage, SIGNAL(triggered()), this, SLOT(importPage()));
 }
+
+void UBBoardController::restart(){
+
+	if(mMainWindow->yesNoQuestion("Nuova lezione", "L'applicazione verrà riavviata per iniziare una nuova lezione. Riavvio?"))
+	{	// restart:
+		UBApplication::applicationController->restart();
+	}
+}
+
 
 void UBBoardController::startScript()
 {

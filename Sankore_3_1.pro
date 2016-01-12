@@ -1,7 +1,7 @@
 TARGET = "Open-Sankore"
 TEMPLATE = app
 
-THIRD_PARTY_PATH=../Sankore-ThirdParty
+THIRD_PARTY_PATH=E:/OpenSankoreOld/OpenSankore/Sankore-ThirdParty
 
 CONFIG -= flat
 CONFIG += debug_and_release \

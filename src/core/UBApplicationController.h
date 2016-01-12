@@ -60,6 +60,8 @@ class UBApplicationController : public QObject
 
         void blackout();
 
+		void restart();
+
         void initScreenLayout(bool useMultiscreen);
 
         void closing();

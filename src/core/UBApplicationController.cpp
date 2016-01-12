@@ -296,6 +296,10 @@ void UBApplicationController::blackout()
     mDisplayManager->blackout();
 }
 
+void UBApplicationController::restart(){
+	UBApplication::app()->quit();
+	QProcess::startDetached(UBApplication::app()->arguments()[0], UBApplication::app()->arguments());
+}
 
 void UBApplicationController::addCapturedPixmap(const QPixmap &pPixmap, bool pageMode, const QUrl& sourceUrl)
 {
