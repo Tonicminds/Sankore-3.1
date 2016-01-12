@@ -231,13 +231,13 @@ void UBFloatingPalette::adjustSizeAndPosition(bool pUp, bool resetPosition)
         moveInsideParent(pos());
         foreach(UBFloatingPalette* palette, mAssociatedPalette)
         {
-            palette->move(pos().x(), palette->pos().y());
+            palette->move(pos().x()+400, palette->pos().y());
             palette->resize(newPreferredSize.width(), palette->size().height());
         }
     }
 
     if (parentWidget() && resetPosition)
-        move((parentWidget()->width() - width()) / 2, (parentWidget()->height() - height()) / 5);
+        move((parentWidget()->width() - width()) / 2+400, (parentWidget()->height() - height()) / 5);
 }
 
 void UBFloatingPalette::removeAllAssociatedPalette()
