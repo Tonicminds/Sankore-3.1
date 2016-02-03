@@ -350,6 +350,7 @@ class UBDocumentController : public UBDocumentContainer
     public slots:
         void createNewDocument();
         void createNewDocumentGroup();
+		void exportCurrentdocumentToPDF();
         void deleteSelectedItem();
         void emptyFolder(const QModelIndex &index, DeletionType pDeletionType = MoveToTrash);
         void deleteIndexAndAssociatedData(const QModelIndex &pIndex);

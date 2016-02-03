@@ -41,6 +41,7 @@
 #include "adaptors/UBThumbnailAdaptor.h"
 
 #include "adaptors/UBMetadataDcSubsetAdaptor.h"
+#include "adaptors/UBExportFullPDF.h"
 
 #include "board/UBBoardController.h"
 #include "board/UBBoardPaletteManager.h"
@@ -2254,6 +2255,14 @@ void UBDocumentController::exportDocument()
 //    {
 //       showMessage(tr("No document selected!"));
 //    }
+}
+
+void UBDocumentController::exportCurrentdocumentToPDF(){
+	UBExportFullPDF* exportFullPdf = new UBExportFullPDF(UBDocumentManager::documentManager());
+    UBDocumentProxy* proxy = firstSelectedTreeProxy();
+	
+    exportFullPdf->persist(proxy);
+	emit exportDone();
 }
 
 void UBDocumentController::exportDocumentSet()
