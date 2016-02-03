@@ -89,7 +89,7 @@ UBDesktopPalette::UBDesktopPalette(QWidget *parent, UBRightPalette* _rightPalett
     connect(mMaximizeAction, SIGNAL(triggered()), this, SLOT(maximizeMe()));
     connect(this, SIGNAL(maximizeStart()), this, SLOT(maximizeMe()));
     connect(this, SIGNAL(minimizeStart(eMinimizedLocation)), this, SLOT(minimizeMe(eMinimizedLocation)));
-    setMinimizePermission(true);
+    setMinimizePermission(false);
 
     connect(rightPalette, SIGNAL(resized()), this, SLOT(parentResized()));
 }

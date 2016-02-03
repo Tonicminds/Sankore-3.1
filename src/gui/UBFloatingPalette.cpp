@@ -159,11 +159,11 @@ int UBFloatingPalette::getParentRightOffset()
 void UBFloatingPalette::moveInsideParent(const QPoint &position)
 {
     QWidget *parent = parentWidget();
-
+	
     if (parent)
     {
         int margin = UBSettings::boardMargin - border();
-        qreal newX = qMax(margin, qMin(parent->width() - getParentRightOffset() - width() - margin, position.x()));
+        qreal newX = qMax(margin, qMin(parent->width() - width() - margin, position.x()));
         qreal newY = qMax(margin, qMin(parent->height() - height() - margin, position.y()));
 
         if (!mCustomPosition && !mIsMoving)
@@ -231,13 +231,13 @@ void UBFloatingPalette::adjustSizeAndPosition(bool pUp, bool resetPosition)
         moveInsideParent(pos());
         foreach(UBFloatingPalette* palette, mAssociatedPalette)
         {
-            palette->move(pos().x()+400, palette->pos().y());
+            palette->move(pos().x(), palette->pos().y());
             palette->resize(newPreferredSize.width(), palette->size().height());
         }
     }
 
     if (parentWidget() && resetPosition)
-        move((parentWidget()->width() - width()) / 2+400, (parentWidget()->height() - height()) / 5);
+        move((parentWidget()->width() - width()) -100, (parentWidget()->height() - height()) / 5);
 }
 
 void UBFloatingPalette::removeAllAssociatedPalette()
