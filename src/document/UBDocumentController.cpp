@@ -1414,6 +1414,7 @@ void UBDocumentController::createNewDocument()
         */
 
         UBDocumentProxy *document = pManager->createDocument(groupName);
+		mCurrentTreeDocument = document;
         selectDocument(document);
 
         if (document)
@@ -2257,11 +2258,9 @@ void UBDocumentController::exportDocument()
 //    }
 }
 
-void UBDocumentController::exportCurrentdocumentToPDF(){
+void UBDocumentController::exportCurrentdocumentToPDF(UBDocumentProxy *proxy){
 	UBExportFullPDF* exportFullPdf = new UBExportFullPDF(UBDocumentManager::documentManager());
-    UBDocumentProxy* proxy = firstSelectedTreeProxy();
-	
-    exportFullPdf->persist(proxy);
+	exportFullPdf->persist(proxy);
 	emit exportDone();
 }
 

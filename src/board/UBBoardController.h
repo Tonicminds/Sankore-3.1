@@ -242,6 +242,7 @@ class UBBoardController : public UBDocumentContainer
         void startScript();
         void stopScript();
 		void restart();
+		void exportToPDF();
 
     signals:
         void newPageAdded();
@@ -304,6 +305,7 @@ class UBBoardController : public UBDocumentContainer
         int mMovingSceneIndex;
         QString mActionGroupText;
         QString mActionUngroupText;
+		UBDocumentProxy *currentDocument;
 
     private slots:
         void stylusToolDoubleClicked(int tool);

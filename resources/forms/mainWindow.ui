@@ -1753,7 +1753,8 @@
   <action name="actionExportPDFQuick">
    <property name="icon">
     <iconset resource="../sankore.qrc">
-     <normaloff>:/images/trapFlashPalette/downloadToBoard.svg</normaloff>:/images/trapFlashPalette/downloadToBoard.svg</iconset>
+     <normaloff>:/images/trapFlashPalette/downloadToBoard.svg</normaloff>
+     <normalon>:/images/trapFlashPalette/downloadToBoard.svg</normalon>:/images/trapFlashPalette/downloadToBoard.svg</iconset>
    </property>
    <property name="text">
     <string>exportPDFQuick</string>

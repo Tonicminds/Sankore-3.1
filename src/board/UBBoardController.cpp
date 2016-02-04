@@ -152,9 +152,8 @@ void UBBoardController::init()
     connect(UBDownloadManager::downloadManager(), SIGNAL(downloadModalFinished()), this, SLOT(onDownloadModalFinished()));
     connect(UBDownloadManager::downloadManager(), SIGNAL(addDownloadedFileToBoard(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool)), this, SLOT(downloadFinished(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool)));
 
-    UBDocumentProxy* doc = UBPersistenceManager::persistenceManager()->createNewDocument();
-
-    setActiveDocumentScene(doc);
+    currentDocument = UBPersistenceManager::persistenceManager()->createNewDocument();
+	setActiveDocumentScene(currentDocument);
 
     connect(UBApplication::mainWindow->actionGroupItems, SIGNAL(triggered()), this, SLOT(groupButtonClicked()));
 
@@ -393,6 +392,7 @@ void UBBoardController::connectToolbar()
 	connect(mMainWindow->actionRestart, SIGNAL(triggered()), this, SLOT(restart()));
     connect(mMainWindow->actionVirtualKeyboard, SIGNAL(triggered(bool)), this, SLOT(showKeyboard(bool)));
     connect(mMainWindow->actionImportPage, SIGNAL(triggered()), this, SLOT(importPage()));
+	connect(mMainWindow->actionExportPDFQuick, SIGNAL(triggered()), this, SLOT(exportToPDF()));
 }
 
 void UBBoardController::restart(){
@@ -403,6 +403,9 @@ void UBBoardController::restart(){
 	}
 }
 
+void UBBoardController::exportToPDF(){
+	UBApplication::documentController->exportCurrentdocumentToPDF(currentDocument);
+}
 
 void UBBoardController::startScript()
 {
@@ -1601,7 +1604,7 @@ void UBBoardController::setActiveDocumentScene(int pSceneIndex)
 void UBBoardController::setActiveDocumentScene(UBDocumentProxy* pDocumentProxy, const int pSceneIndex, bool forceReload)
 {
     saveViewState();
-
+	currentDocument = pDocumentProxy;
     bool documentChange = selectedDocument() != pDocumentProxy;
 
     int index = pSceneIndex;

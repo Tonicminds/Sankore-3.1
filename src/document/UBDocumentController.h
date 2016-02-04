@@ -320,6 +320,7 @@ class UBDocumentController : public UBDocumentContainer
         UBDocumentController(UBMainWindow* mainWindow);
         virtual ~UBDocumentController();
 
+		void exportCurrentdocumentToPDF(UBDocumentProxy *);
         void closing();
         QWidget* controlView();
         UBDocumentProxyTreeItem* findDocument(UBDocumentProxy* proxy);
@@ -350,7 +351,6 @@ class UBDocumentController : public UBDocumentContainer
     public slots:
         void createNewDocument();
         void createNewDocumentGroup();
-		void exportCurrentdocumentToPDF();
         void deleteSelectedItem();
         void emptyFolder(const QModelIndex &index, DeletionType pDeletionType = MoveToTrash);
         void deleteIndexAndAssociatedData(const QModelIndex &pIndex);
