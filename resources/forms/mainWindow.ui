@@ -403,7 +403,7 @@
   <action name="actionRestart">
    <property name="icon">
     <iconset resource="../sankore.qrc">
-     <normaloff>:/images/toolbar/quitOn.png</normaloff>:/images/toolbar/quitOn.png</iconset>
+     <normaloff>:/images/toolbar/restart.png</normaloff>:/images/toolbar/restart.png</iconset>
    </property>
    <property name="text">
     <string>New lesson</string>
@@ -1753,8 +1753,8 @@
   <action name="actionPDF">
    <property name="icon">
     <iconset resource="../sankore.qrc">
-     <normaloff>:/images/trapFlashPalette/downloadToBoard.svg</normaloff>
-     <normalon>:/images/trapFlashPalette/downloadToBoard.svg</normalon>:/images/trapFlashPalette/downloadToBoard.svg</iconset>
+     <normaloff>:/images/toolbar/savePdf.png</normaloff>
+     <normalon>:/images/toolbar/savePdf.png</normalon>:/images/toolbar/savePdf.png</iconset>
    </property>
    <property name="text">
     <string>Export to PDF</string>

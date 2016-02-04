@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/">
+    <file>images/toolbar/savePdf.png</file>
     <file>images/toolbar/restart.png</file>
     <file>images/uniboard.png</file>
     <file>images/bigUniboard.png</file>
