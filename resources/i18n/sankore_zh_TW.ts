@@ -845,6 +845,22 @@
         <comment>tooltip</comment>
         <translation type="unfinished">書籤</translation>
     </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <source>Restart Open-Sankoré</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to PDF</source>
+        <translation type="unfinished">匯出成PDF</translation>
+    </message>
+    <message>
+        <source>Export to PDF format</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -907,7 +923,7 @@
     <name>UBApplication</name>
     <message>
         <source>Page Size</source>
-        <translation>頁面大小</translation>
+        <translation type="obsolete">頁面大小</translation>
     </message>
     <message>
         <source>Podcast</source>
@@ -982,6 +998,14 @@
     <message>
         <source>Ungroup</source>
         <translation>取消群組</translation>
+    </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The application will be restarted. Restart?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

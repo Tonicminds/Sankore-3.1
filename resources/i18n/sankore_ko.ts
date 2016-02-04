@@ -845,6 +845,22 @@
         <comment>tooltip</comment>
         <translation type="unfinished">북마크</translation>
     </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <source>Restart Open-Sankoré</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to PDF</source>
+        <translation type="unfinished">PDF로 내보내기</translation>
+    </message>
+    <message>
+        <source>Export to PDF format</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -907,7 +923,7 @@
     <name>UBApplication</name>
     <message>
         <source>Page Size</source>
-        <translation>페이지 크기</translation>
+        <translation type="obsolete">페이지 크기</translation>
     </message>
     <message>
         <source>Podcast</source>
@@ -982,6 +998,14 @@
     <message>
         <source>Ungroup</source>
         <translation>그룹 해제</translation>
+    </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The application will be restarted. Restart?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

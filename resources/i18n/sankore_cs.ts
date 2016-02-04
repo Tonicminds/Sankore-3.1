@@ -846,6 +846,22 @@
         <comment>tooltip</comment>
         <translation type="unfinished">Záložka</translation>
     </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <source>Restart Open-Sankoré</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to PDF</source>
+        <translation type="unfinished">Exportovat do PDF</translation>
+    </message>
+    <message>
+        <source>Export to PDF format</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -912,7 +928,7 @@
     </message>
     <message>
         <source>Page Size</source>
-        <translation>Velikost stránky</translation>
+        <translation type="obsolete">Velikost stránky</translation>
     </message>
 </context>
 <context>
@@ -983,6 +999,14 @@
     <message>
         <source>Ungroup</source>
         <translation>Odseskupit</translation>
+    </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The application will be restarted. Restart?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

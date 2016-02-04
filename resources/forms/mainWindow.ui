@@ -1757,7 +1757,7 @@
      <normalon>:/images/trapFlashPalette/downloadToBoard.svg</normalon>:/images/trapFlashPalette/downloadToBoard.svg</iconset>
    </property>
    <property name="text">
-    <string>Export as PDF</string>
+    <string>Export to PDF</string>
    </property>
    <property name="toolTip">
     <string>Export to PDF format</string>

@@ -76,6 +76,10 @@
         <translation>Nuova lezione</translation>
     </message>
     <message>
+        <source>Export to PDF</source>
+        <translation>Esporta come PDF</translation>
+    </message>
+    <message>
         <source>Web</source>
         <translation>Web</translation>
     </message>
@@ -849,6 +853,14 @@
         <comment>tooltip</comment>
         <translation>Segnalibro</translation>
     </message>
+    <message utf8="true">
+        <source>Restart Open-Sankoré</source>
+        <translation>Riavviare Open-Sankoré</translation>
+    </message>
+    <message>
+        <source>Export to PDF format</source>
+        <translation>Esporta in formato PDF</translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -911,7 +923,7 @@
     <name>UBApplication</name>
     <message>
         <source>Page Size</source>
-        <translation>Dimensione pagina</translation>
+        <translation type="obsolete">Dimensione pagina</translation>
     </message>
     <message>
         <source>Podcast</source>
@@ -986,6 +998,14 @@
     <message>
         <source>Ungroup</source>
         <translation>Separa</translation>
+    </message>
+    <message>
+        <source>New lesson</source>
+        <translation>Nuova lezione</translation>
+    </message>
+    <message>
+        <source>The application will be restarted. Restart?</source>
+        <translation>L&apos;applicazione verrà riavviata per iniziare una nuova lezione. Riavviare?</translation>
     </message>
 </context>
 <context>
@@ -1392,6 +1412,7 @@ Fornendo un nome nuovo sarà creato un nuovo documento.</translation>
         <source>%1 pages copied</source>
         <translation>
             <numerusform>%1 pagine copiate</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -1409,6 +1430,7 @@ Fornendo un nome nuovo sarà creato un nuovo documento.</translation>
         <source>%1 pages copied</source>
         <translation>
             <numerusform>%1 pagine copiate</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2303,6 +2325,10 @@ Vuoi ignorare gli errori per questo host?</translation>
     <message>
         <source>Basque</source>
         <translation>Basco</translation>
+    </message>
+    <message>
+        <source>Bambara</source>
+        <translation></translation>
     </message>
 </context>
 <context>

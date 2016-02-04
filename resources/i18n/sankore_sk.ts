@@ -847,6 +847,22 @@
         <comment>tooltip</comment>
         <translation>Záložka</translation>
     </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <source>Restart Open-Sankoré</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to PDF</source>
+        <translation type="unfinished">Exportovať do PDF</translation>
+    </message>
+    <message>
+        <source>Export to PDF format</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -913,7 +929,7 @@
     </message>
     <message>
         <source>Page Size</source>
-        <translation>Veľkosť stránky</translation>
+        <translation type="obsolete">Veľkosť stránky</translation>
     </message>
 </context>
 <context>
@@ -984,6 +1000,14 @@
     <message>
         <source>Ungroup</source>
         <translation>Oddeliť</translation>
+    </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The application will be restarted. Restart?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2305,6 +2329,10 @@ Chcete ignorovať tieto chyby na tomto serveri?</translation>
     <message>
         <source>Basque</source>
         <translation>Baskitčina</translation>
+    </message>
+    <message>
+        <source>Bambara</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

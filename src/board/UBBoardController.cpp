@@ -397,7 +397,7 @@ void UBBoardController::connectToolbar()
 
 void UBBoardController::restart(){
 
-	if(mMainWindow->yesNoQuestion("Nuova lezione", "L'applicazione verrà riavviata per iniziare una nuova lezione. Riavvio?"))
+	if(mMainWindow->yesNoQuestion(tr("New lesson"), tr("The application will be restarted. Restart?")))
 	{	// restart:
 		UBApplication::applicationController->restart();
 	}

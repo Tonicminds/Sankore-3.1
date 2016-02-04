@@ -846,6 +846,22 @@
         <translatorcomment>Подсказка</translatorcomment>
         <translation>Закладка</translation>
     </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <source>Restart Open-Sankoré</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to PDF</source>
+        <translation type="unfinished">Экспорт в PDF</translation>
+    </message>
+    <message>
+        <source>Export to PDF format</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -908,7 +924,7 @@
     <name>UBApplication</name>
     <message>
         <source>Page Size</source>
-        <translation>Размеры страницы</translation>
+        <translation type="obsolete">Размеры страницы</translation>
     </message>
     <message>
         <source>Podcast</source>
@@ -983,6 +999,14 @@
     <message>
         <source>Ungroup</source>
         <translation>Разгруппировать</translation>
+    </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The application will be restarted. Restart?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

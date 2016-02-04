@@ -846,6 +846,22 @@
         <comment>tooltip</comment>
         <translation>Adreça d&apos;interès</translation>
     </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <source>Restart Open-Sankoré</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to PDF</source>
+        <translation type="unfinished">Exporta a PDF</translation>
+    </message>
+    <message>
+        <source>Export to PDF format</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -908,7 +924,7 @@
     <name>UBApplication</name>
     <message>
         <source>Page Size</source>
-        <translation>Mida de la pàgina</translation>
+        <translation type="obsolete">Mida de la pàgina</translation>
     </message>
     <message>
         <source>Podcast</source>
@@ -983,6 +999,14 @@
     <message>
         <source>Ungroup</source>
         <translation>Desagrupa</translation>
+    </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The application will be restarted. Restart?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2304,6 +2328,10 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
     <message>
         <source>Basque</source>
         <translation>Basc</translation>
+    </message>
+    <message>
+        <source>Bambara</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

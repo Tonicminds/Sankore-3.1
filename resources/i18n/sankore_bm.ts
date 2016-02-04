@@ -850,6 +850,22 @@ togo kura da
         <comment>tooltip</comment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <source>Restart Open-Sankoré</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to PDF</source>
+        <translation type="unfinished">labɔ ka bila PDF kan</translation>
+    </message>
+    <message>
+        <source>Export to PDF format</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -916,7 +932,7 @@ togo koro
     <name>UBApplication</name>
     <message>
         <source>Page Size</source>
-        <translation>gaféfura kunkɔrɔdama</translation>
+        <translation type="obsolete">gaféfura kunkɔrɔdama</translation>
     </message>
     <message>
         <source>Podcast</source>
@@ -991,6 +1007,14 @@ togo koro
     <message>
         <source>Ungroup</source>
         <translation>kéléna</translation>
+    </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The application will be restarted. Restart?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

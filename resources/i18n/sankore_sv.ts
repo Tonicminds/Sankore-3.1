@@ -845,6 +845,22 @@
         <comment>tooltip</comment>
         <translation type="unfinished">Lägg till bokmärke</translation>
     </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <source>Restart Open-Sankoré</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to PDF</source>
+        <translation type="unfinished">Exportera till PDF</translation>
+    </message>
+    <message>
+        <source>Export to PDF format</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -907,7 +923,7 @@
     <name>UBApplication</name>
     <message>
         <source>Page Size</source>
-        <translation>Storlek på sida</translation>
+        <translation type="obsolete">Storlek på sida</translation>
     </message>
     <message>
         <source>Podcast</source>
@@ -983,6 +999,14 @@
     <message>
         <source>Ungroup</source>
         <translation>Avgruppera</translation>
+    </message>
+    <message>
+        <source>New lesson</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The application will be restarted. Restart?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
