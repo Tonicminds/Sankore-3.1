@@ -392,7 +392,7 @@ void UBBoardController::connectToolbar()
 	connect(mMainWindow->actionRestart, SIGNAL(triggered()), this, SLOT(restart()));
     connect(mMainWindow->actionVirtualKeyboard, SIGNAL(triggered(bool)), this, SLOT(showKeyboard(bool)));
     connect(mMainWindow->actionImportPage, SIGNAL(triggered()), this, SLOT(importPage()));
-	connect(mMainWindow->actionExportPDFQuick, SIGNAL(triggered()), this, SLOT(exportToPDF()));
+	connect(mMainWindow->actionPDF, SIGNAL(triggered()), this, SLOT(exportToPDF()));
 }
 
 void UBBoardController::restart(){

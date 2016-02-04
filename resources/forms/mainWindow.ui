@@ -71,7 +71,7 @@
    <addaction name="actionErase"/>
    <addaction name="actionGroupItems"/>
    <addaction name="separator"/>
-   <addaction name="actionExportPDFQuick"/>
+   <addaction name="actionPDF"/>
    <addaction name="separator"/>
    <addaction name="actionBoard"/>
    <addaction name="actionDocument"/>
@@ -1750,14 +1750,14 @@
     <string>Add link to current page</string>
    </property>
   </action>
-  <action name="actionExportPDFQuick">
+  <action name="actionPDF">
    <property name="icon">
     <iconset resource="../sankore.qrc">
      <normaloff>:/images/trapFlashPalette/downloadToBoard.svg</normaloff>
      <normalon>:/images/trapFlashPalette/downloadToBoard.svg</normalon>:/images/trapFlashPalette/downloadToBoard.svg</iconset>
    </property>
    <property name="text">
-    <string>exportPDFQuick</string>
+    <string>Export as PDF</string>
    </property>
    <property name="toolTip">
     <string>Export to PDF format</string>

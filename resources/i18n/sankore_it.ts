@@ -72,6 +72,10 @@
         <translation>Lavagna</translation>
     </message>
     <message>
+        <source>New lesson</source>
+        <translation>Nuova lezione</translation>
+    </message>
+    <message>
         <source>Web</source>
         <translation>Web</translation>
     </message>
@@ -1618,7 +1622,7 @@ Fornendo un nome nuovo sarà creato un nuovo documento.</translation>
     </message>
     <message>
         <source>Export to PDF</source>
-        <translation>Esporta in PDF</translation>
+        <translation>Esporta come PDF</translation>
     </message>
 </context>
 <context>

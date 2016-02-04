@@ -2262,6 +2262,7 @@ void UBDocumentController::exportCurrentdocumentToPDF(UBDocumentProxy *proxy){
 	UBExportFullPDF* exportFullPdf = new UBExportFullPDF(UBDocumentManager::documentManager());
 	exportFullPdf->persist(proxy);
 	emit exportDone();
+	delete exportFullPdf;
 }
 
 void UBDocumentController::exportDocumentSet()
