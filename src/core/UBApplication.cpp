@@ -450,10 +450,8 @@ void UBApplication::toolBarPositionChanged(QVariant topOrBottom)
 {
     Qt::ToolBarArea area;
 
-    if (topOrBottom.toBool())
-        area = Qt::TopToolBarArea;
-    else
-        area = Qt::BottomToolBarArea;
+
+    area = Qt::BottomToolBarArea;
 
     mainWindow->addToolBar(area, mainWindow->boardToolBar);
     mainWindow->addToolBar(area, mainWindow->webToolBar);

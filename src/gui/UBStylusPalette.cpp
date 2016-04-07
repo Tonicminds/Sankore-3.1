@@ -102,7 +102,7 @@ void UBStylusPalette::initPosition()
             QPoint pos;
             int parentWidth = pParentW->width();
             int parentHeight = pParentW->height();
-            int posX = (parentWidth / 2) - (width() / 2);
+            int posX = parentWidth - border() - width();
             int posY = parentHeight - border() - height();
 
             pos.setX(posX);

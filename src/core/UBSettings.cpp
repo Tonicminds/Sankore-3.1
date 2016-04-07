@@ -217,10 +217,10 @@ void UBSettings::init()
     documentSizes.insert(DocumentSizeRatio::Ratio4_3, QSize(1280, 960)); // 1.33
     documentSizes.insert(DocumentSizeRatio::Ratio16_9, QSize((960 / 9 * 16), 960)); // 1.77
 
-    appToolBarPositionedAtTop = new UBSetting(this, "App", "ToolBarPositionedAtTop", true);
+    appToolBarPositionedAtTop = new UBSetting(this, "App", "ToolBarPositionedAtTop", false);
     appToolBarDisplayText = new UBSetting(this, "App", "ToolBarDisplayText", true);
-    appEnableAutomaticSoftwareUpdates = new UBSetting(this, "App", "EnableAutomaticSoftwareUpdates", true);
-    appEnableSoftwareUpdates = new UBSetting(this, "App", "EnableSoftwareUpdates", true);
+    appEnableAutomaticSoftwareUpdates = new UBSetting(this, "App", "EnableAutomaticSoftwareUpdates", false);
+    appEnableSoftwareUpdates = new UBSetting(this, "App", "EnableSoftwareUpdates", false);
     appToolBarOrientationVertical = new UBSetting(this, "App", "ToolBarOrientationVertical", false);
 
     rightLibPaletteBoardModeWidth = new UBSetting(this, "Board", "RightLibPaletteBoardModeWidth", 270);
