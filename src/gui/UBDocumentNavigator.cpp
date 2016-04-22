@@ -290,10 +290,12 @@ void UBDocumentNavigator::mousePressEvent(QMouseEvent *event)
         }
         
         QPointF scenePos = mapToScene(event->pos());
-        QPointF widgetPos = pCrntItem->mapFromScene(scenePos);
-        if (pCrntItem->shouldSetActiveSceneForClickAt(widgetPos)) {
-            UBApplication::boardController->setActiveDocumentScene(index);
-        }
+		if(pCrntItem != NULL){
+			QPointF widgetPos = pCrntItem->mapFromScene(scenePos);
+			if (pCrntItem->shouldSetActiveSceneForClickAt(widgetPos)) {
+				UBApplication::boardController->setActiveDocumentScene(index);
+			}
+		}
 	}
 	QGraphicsView::mousePressEvent(event);
 }
