@@ -93,39 +93,19 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
 
 void UBStylusPalette::initPosition()
 {
-    if(!UBSettings::settings()->appToolBarOrientationVertical->get().toBool())
+    QWidget* pParentW = parentWidget();
+    if(NULL != pParentW)
     {
-        QWidget* pParentW = parentWidget();
-        if(NULL != pParentW)
-        {
-            mCustomPosition = true;
-            QPoint pos;
-            int parentWidth = pParentW->width();
-            int parentHeight = pParentW->height();
-            int posX = parentWidth - border() - width();
-            int posY = parentHeight - border() - height();
+        mCustomPosition = true;
+        QPoint pos;
+        int parentWidth = pParentW->width();
+        int parentHeight = pParentW->height();
+        int posX = parentWidth - border() - width();
+        int posY = (parentHeight / 2) - (height() / 2);;
 
-            pos.setX(posX);
-            pos.setY(posY);
-            moveInsideParent(pos);
-        }
-    }
-    else
-    {
-        QWidget* pParentW = parentWidget();
-        if(NULL != pParentW)
-        {
-            mCustomPosition = true;
-            QPoint pos;
-            int parentWidth = pParentW->width();
-            int parentHeight = pParentW->height();
-            int posX = parentWidth - border() - width();
-            int posY = (parentHeight / 2) - (height() / 2);;
-
-            pos.setX(posX);
-            pos.setY(posY);
-            moveInsideParent(pos);
-        }
+        pos.setX(posX);
+        pos.setY(posY);
+        moveInsideParent(pos);
     }
 }
 
