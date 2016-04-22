@@ -399,7 +399,10 @@ void UBBoardController::restart(){
 
 	if(mMainWindow->yesNoQuestion(tr("New lesson"), tr("The application will be restarted. Restart?")))
 	{	// restart:
-		UBApplication::applicationController->restart();
+		//UBApplication::applicationController->restart();
+		UBApplication::documentController->selectDocument(selectedDocument());
+		UBApplication::documentController->createNewDocument();
+		UBApplication::documentController->openSelectedItem();
 	}
 }
 
